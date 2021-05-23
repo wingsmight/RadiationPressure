@@ -6,6 +6,7 @@ public class Photon : MonoBehaviour
 {
     [SerializeField] private Vector3 direction;
     [SerializeField] private float speed;
+    [SerializeField] private Rigidbody rigidbody;
 
 
     private Coroutine moveCoroutine;
@@ -21,11 +22,12 @@ public class Photon : MonoBehaviour
     }
     public void Move()
     {
-        if (moveCoroutine != null)
-        {
-            StopCoroutine(moveCoroutine);
-        }
-        moveCoroutine = StartCoroutine(MoveRouitne());
+        rigidbody.AddForce(direction * speed, ForceMode.Force);
+        //if (moveCoroutine != null)
+        //{
+        //    StopCoroutine(moveCoroutine);
+        //}
+        //moveCoroutine = StartCoroutine(MoveRouitne());
     }
 
     private IEnumerator MoveRouitne()
