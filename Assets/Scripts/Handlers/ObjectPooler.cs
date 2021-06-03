@@ -57,5 +57,5 @@ public class ObjectPooler : MonoBehaviour
 	}
 
 
-	public int PoolAmount => poolAmount;
+	public int PoolAmount {get => poolAmount; set => poolAmount = value;}
 }

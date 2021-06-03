@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,10 +6,19 @@ public class Photon : MonoBehaviour
 {
     [SerializeField] private Vector3 direction;
     [SerializeField] private float speed;
-    [SerializeField] private Rigidbody rigidbody;
 
 
     private Coroutine moveCoroutine;
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        // Photon newPhoton = Instantiate(this, transform.position, transform.rotation, transform.parent);
+        // var collider = newPhoton.gameObject.GetComponent<SphereCollider>();
+        // Destroy(collider);
+        // Destroy(newPhoton.GetComponent<Rigidbody>());
+        // newPhoton.gameObject.AddComponent<Rigidbody>();
+    }
 
 
     public void Show()
@@ -22,7 +31,7 @@ public class Photon : MonoBehaviour
     }
     public void Move()
     {
-        rigidbody.AddForce(direction * speed, ForceMode.Force);
+        GetComponent<Rigidbody>().AddForce(direction * speed, ForceMode.Force);
         //if (moveCoroutine != null)
         //{
         //    StopCoroutine(moveCoroutine);

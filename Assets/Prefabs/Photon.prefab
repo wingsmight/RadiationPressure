@@ -47,9 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eae88c21d02d18499e2893aaf282420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: -0.5, z: 1}
+  direction: {x: 10, y: 0, z: 1}
   speed: 75
-  rigidbody: {fileID: -453636591334054420}
 --- !u!33 &4416718598542779819
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -69,6 +68,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
