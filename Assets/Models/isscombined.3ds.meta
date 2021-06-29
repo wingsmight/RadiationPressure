@@ -1,83 +1,227 @@
 fileFormatVersion: 2
 guid: 0c13ec390930d40b1b5cbd06c3c038d6
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: bendedtru1
-    100002: bendedtru2
-    100004: bendedtru3
-    100006: bendedtrus
-    100008: //RootNode
-    100010: pCylinder1
-    100012: pCylinder2
-    100014: pCylinder8
-    100016: polySurfa1
-    100018: polySurfa2
-    100020: polySurfa3
-    400000: bendedtru1
-    400002: bendedtru2
-    400004: bendedtru3
-    400006: bendedtrus
-    400008: //RootNode
-    400010: pCylinder1
-    400012: pCylinder2
-    400014: pCylinder8
-    400016: polySurfa1
-    400018: polySurfa2
-    400020: polySurfa3
-    2100000: anisotropic1SG
-    2100002: apollohorns_blin
-    2100004: bendedtruss_blin
-    2100006: bendedtruss_bli1
-    2100008: blinn1SG
-    2100010: blinn3SG
-    2100012: blinn4SG
-    2100014: blinn5SG
-    2100016: blinn6SG
-    2100018: blinn7SG
-    2100020: initialShadingGr
-    2100022: lambert2SG
-    2100024: lambert3SG
-    2100026: lambert4SG
-    2100028: lambert6SG
-    2100030: lambert7SG
-    2100032: soyuz_blinn2SG
-    2100034: soyuz_blinn3SG
-    2100036: soyuz_blinn4SG
-    2300000: bendedtru1
-    2300002: bendedtru2
-    2300004: bendedtru3
-    2300006: bendedtrus
-    2300008: pCylinder1
-    2300010: pCylinder2
-    2300012: pCylinder8
-    2300014: polySurfa1
-    2300016: polySurfa2
-    2300018: polySurfa3
-    3300000: bendedtru1
-    3300002: bendedtru2
-    3300004: bendedtru3
-    3300006: bendedtrus
-    3300008: pCylinder1
-    3300010: pCylinder2
-    3300012: pCylinder8
-    3300014: polySurfa1
-    3300016: polySurfa2
-    3300018: polySurfa3
-    4300000: bendedtrus
-    4300002: bendedtru1
-    4300004: bendedtru2
-    4300006: bendedtru3
-    4300008: pCylinder8
-    4300010: pCylinder1
-    4300012: pCylinder2
-    4300014: polySurfa1
-    4300016: polySurfa2
-    4300018: polySurfa3
-    9500000: //RootNode
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: bendedtru1
+  - first:
+      1: 100002
+    second: bendedtru2
+  - first:
+      1: 100004
+    second: bendedtru3
+  - first:
+      1: 100006
+    second: bendedtrus
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      1: 100010
+    second: pCylinder1
+  - first:
+      1: 100012
+    second: pCylinder2
+  - first:
+      1: 100014
+    second: pCylinder8
+  - first:
+      1: 100016
+    second: polySurfa1
+  - first:
+      1: 100018
+    second: polySurfa2
+  - first:
+      1: 100020
+    second: polySurfa3
+  - first:
+      4: 400000
+    second: bendedtru1
+  - first:
+      4: 400002
+    second: bendedtru2
+  - first:
+      4: 400004
+    second: bendedtru3
+  - first:
+      4: 400006
+    second: bendedtrus
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      4: 400010
+    second: pCylinder1
+  - first:
+      4: 400012
+    second: pCylinder2
+  - first:
+      4: 400014
+    second: pCylinder8
+  - first:
+      4: 400016
+    second: polySurfa1
+  - first:
+      4: 400018
+    second: polySurfa2
+  - first:
+      4: 400020
+    second: polySurfa3
+  - first:
+      21: 2100000
+    second: anisotropic1SG
+  - first:
+      21: 2100002
+    second: apollohorns_blin
+  - first:
+      21: 2100004
+    second: bendedtruss_blin
+  - first:
+      21: 2100006
+    second: bendedtruss_bli1
+  - first:
+      21: 2100008
+    second: blinn1SG
+  - first:
+      21: 2100010
+    second: blinn3SG
+  - first:
+      21: 2100012
+    second: blinn4SG
+  - first:
+      21: 2100014
+    second: blinn5SG
+  - first:
+      21: 2100016
+    second: blinn6SG
+  - first:
+      21: 2100018
+    second: blinn7SG
+  - first:
+      21: 2100020
+    second: initialShadingGr
+  - first:
+      21: 2100022
+    second: lambert2SG
+  - first:
+      21: 2100024
+    second: lambert3SG
+  - first:
+      21: 2100026
+    second: lambert4SG
+  - first:
+      21: 2100028
+    second: lambert6SG
+  - first:
+      21: 2100030
+    second: lambert7SG
+  - first:
+      21: 2100032
+    second: soyuz_blinn2SG
+  - first:
+      21: 2100034
+    second: soyuz_blinn3SG
+  - first:
+      21: 2100036
+    second: soyuz_blinn4SG
+  - first:
+      23: 2300000
+    second: bendedtru1
+  - first:
+      23: 2300002
+    second: bendedtru2
+  - first:
+      23: 2300004
+    second: bendedtru3
+  - first:
+      23: 2300006
+    second: bendedtrus
+  - first:
+      23: 2300008
+    second: pCylinder1
+  - first:
+      23: 2300010
+    second: pCylinder2
+  - first:
+      23: 2300012
+    second: pCylinder8
+  - first:
+      23: 2300014
+    second: polySurfa1
+  - first:
+      23: 2300016
+    second: polySurfa2
+  - first:
+      23: 2300018
+    second: polySurfa3
+  - first:
+      33: 3300000
+    second: bendedtru1
+  - first:
+      33: 3300002
+    second: bendedtru2
+  - first:
+      33: 3300004
+    second: bendedtru3
+  - first:
+      33: 3300006
+    second: bendedtrus
+  - first:
+      33: 3300008
+    second: pCylinder1
+  - first:
+      33: 3300010
+    second: pCylinder2
+  - first:
+      33: 3300012
+    second: pCylinder8
+  - first:
+      33: 3300014
+    second: polySurfa1
+  - first:
+      33: 3300016
+    second: polySurfa2
+  - first:
+      33: 3300018
+    second: polySurfa3
+  - first:
+      43: 4300000
+    second: bendedtrus
+  - first:
+      43: 4300002
+    second: bendedtru1
+  - first:
+      43: 4300004
+    second: bendedtru2
+  - first:
+      43: 4300006
+    second: bendedtru3
+  - first:
+      43: 4300008
+    second: pCylinder8
+  - first:
+      43: 4300010
+    second: pCylinder1
+  - first:
+      43: 4300012
+    second: pCylinder2
+  - first:
+      43: 4300014
+    second: polySurfa1
+  - first:
+      43: 4300016
+    second: polySurfa2
+  - first:
+      43: 4300018
+    second: polySurfa3
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -110,25 +254,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -137,10 +288,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
-  copyAvatar: 0
+  referencedClips: []
+  importAnimation: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -150,13 +301,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

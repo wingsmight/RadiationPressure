@@ -5,57 +5,54 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-	[SerializeField] protected int capacity;
-	[SerializeField] protected int poolAmount;
-	[SerializeField] protected bool canExpand = true;
-	[SerializeField] protected GameObject itemToPool;
+    [SerializeField] protected int capacity;
+    [SerializeField] protected int poolAmount;
+    [SerializeField] protected bool canExpand = true;
+    [SerializeField] protected GameObject itemToPool;
 
-	protected List<GameObject> pooledObjects = new List<GameObject>();
-
-
-	protected virtual void Awake()
-	{
-		pooledObjects = new List<GameObject>(capacity);
-
-		for (int i = 0; i < poolAmount; i++)
-		{
-			pooledObjects.Add(CreateObject());
-		}
-	}
+    protected List<GameObject> pooledObjects = new List<GameObject>();
 
 
-	public GameObject GetObject()
-	{
-		for (int i = 0; i < poolAmount; i++)
-		{
-			if (!pooledObjects[i].activeInHierarchy)
-			{
-				return pooledObjects[i];
-			}
-		}
+    protected virtual void Awake()
+    {
+        pooledObjects = new List<GameObject>(capacity);
 
-		if (canExpand)
-		{
-			var newObject = CreateObject();
-			pooledObjects.Add(newObject);
-
-			return newObject;
-		}
-		return null;
-	}
-	public void ReturnObject(GameObject gameObject)
-	{
-		gameObject.SetActive(false);
-	}
-
-	protected virtual GameObject CreateObject()
-	{
-		GameObject obj = Instantiate(itemToPool, this.transform);
-		obj.SetActive(false);
-
-		return obj;
-	}
+        for (int i = 0; i < poolAmount; i++)
+        {
+            pooledObjects.Add(CreateObject());
+        }
+    }
 
 
-	public int PoolAmount {get => poolAmount; set => poolAmount = value;}
+    public GameObject GetObject()
+    {
+        for (int i = 0; i < poolAmount; i++)
+        {
+            if (!pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
+        }
+
+        if (canExpand)
+        {
+            var newObject = CreateObject();
+            pooledObjects.Add(newObject);
+
+            return newObject;
+        }
+        return null;
+    }
+    public void ReturnObject(GameObject gameObject)
+    {
+        gameObject.SetActive(false);
+    }
+
+    protected virtual GameObject CreateObject()
+    {
+        GameObject obj = Instantiate(itemToPool, this.transform);
+        obj.SetActive(false);
+
+        return obj;
+    }
 }

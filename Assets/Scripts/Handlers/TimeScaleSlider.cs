@@ -18,9 +18,7 @@ public class TimeScaleSlider : MonoBehaviour
         slider.maxValue = MAX_VALUE;
 
         slider.value = Time.timeScale;
-    }
-    private void Update()
-    {
-        Time.timeScale = slider.value;
+
+        slider.onValueChanged.AddListener((value) => Time.timeScale = value);
     }
 }
