@@ -48,7 +48,11 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
         {
             if (Physics.Raycast(ray.origin, ray.direction, out var hit, remainingLength))
             {
+                // reduce energy
                 energy /= 2.0f;
+
+                // calculate the force
+                PhotonGenerator.radiatoinForce += Formulas.RadiationForce(hit.normal, ray.direction);
 
                 // primary ray
                 lineRenderer.positionCount++;
@@ -59,18 +63,14 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                 // secondary ray
                 float x = Random.Range(-1.0f, 1.0f);
                 float y = Random.Range(-1.0f, 1.0f);
-                float z = (x * hit.normal.x + y * hit.normal.y) / hit.normal.z;
+                float zLength = Random.Range(0.0f, 1.0f);
+                float z = (x * hit.normal.x + y * hit.normal.y) / zLength * hit.normal.z;
                 Vector3 perpendicularVector = new Vector3(x, y, z);
                 Vector3 diffuseDirection = perpendicularVector + hit.normal;
 
                 var secondaryPhoton = Instantiate<RaycastReflectionPhoton>(prefab, hit.point, Quaternion.identity, transform);
                 secondaryPhoton.Throw(hit.point, diffuseDirection, energy);
             }
-        }
-
-        if (lineRenderer.positionCount == 1)
-        {
-            Destroy(this);
         }
     }
 }

@@ -14,6 +14,9 @@ public class PhotonGenerator : MonoBehaviour
     [SerializeField] private float startEnergy;
 
 
+    public static Vector3 radiatoinForce = Vector3.zero;
+
+
     private void Awake()
     {
 
@@ -23,7 +26,10 @@ public class PhotonGenerator : MonoBehaviour
         photonsCountInputField.text = photonsCount.ToString();
         photonsCountInputField.onValueChanged.AddListener((text) =>
         {
-            photonsCount = int.Parse(text);
+            if (!int.TryParse(text, out photonsCount))
+            {
+                photonsCount = 0;
+            }
         });
     }
     public void Update()
