@@ -15,9 +15,8 @@ public class OffsetObjectPooler : ObjectPooler
     {
         base.Awake();
 
-
-        float cubeWidth = Mathf.CeilToInt(Mathf.Pow(poolAmount, 1.0f / dimension));
-        Vector3 objectSize = new Vector3(itemToPool.transform.localScale.x, itemToPool.transform.localScale.y, itemToPool.transform.localScale.z);
+        float cubeWidth = Mathf.CeilToInt(Mathf.Pow(capacity, 1.0f / dimension));
+        Vector3 objectSize = new Vector3(pooledObject.transform.localScale.x, pooledObject.transform.localScale.y, pooledObject.transform.localScale.z);
         objectSize += betweenOffset / 2;
         Vector3 minPoint = (cubeWidth / 2) * new Vector3(objectSize.x, objectSize.y, objectSize.z) * -1;
         int objectIndex = 0;
@@ -29,7 +28,7 @@ public class OffsetObjectPooler : ObjectPooler
                 {
                     if (objectIndex < pooledObjects.Count)
                     {
-                        pooledObjects[objectIndex++].transform.localPosition = new Vector3(x * objectSize.x, y * objectSize.y, z * objectSize.z) + minPoint;
+                        pooledObjects[objectIndex++].GameObject.transform.localPosition = new Vector3(x * objectSize.x, y * objectSize.y, z * objectSize.z) + minPoint;
                     }
                 }
             }

@@ -145,6 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxReflectionsCount: 20
   maxLength: 500
-  prefab: {fileID: 1466866179005634225}
   startEnergy: 100
   minEnergy: 1
+  secondaryRayCreateDelay: 0

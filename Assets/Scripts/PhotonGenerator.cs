@@ -43,12 +43,19 @@ public class PhotonGenerator : MonoBehaviour
 
     public void Throw()
     {
+        StartCoroutine(ThrowRoutine());
+    }
+
+    private IEnumerator ThrowRoutine()
+    {
         for (int i = 0; i < photonsCount; i++)
         {
-            var pooledPhotonObject = offsetObjectPooler.GetObject();
-            pooledPhotonObject.SetActive(true);
-            IPhoton photon = pooledPhotonObject.GetComponent<IPhoton>();
-            photon.Throw(pooledPhotonObject.transform.position, transform.forward, startEnergy);
+            var pooledPhotonObject = offsetObjectPooler.Pull();
+            pooledPhotonObject.GameObject.SetActive(true);
+            IPhoton photon = pooledPhotonObject.GameObject.GetComponent<IPhoton>();
+            photon.Throw(pooledPhotonObject.GameObject.transform.position, transform.forward, startEnergy);
+
+            yield return new WaitForEndOfFrame();
         }
     }
 

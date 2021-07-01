@@ -6,29 +6,38 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     [SerializeField] protected int capacity;
-    [SerializeField] protected int poolAmount;
     [SerializeField] protected bool canExpand = true;
-    [SerializeField] protected GameObject itemToPool;
+    [SerializeField] protected GameObject pooledObject;
 
-    protected List<GameObject> pooledObjects = new List<GameObject>();
+
+    protected List<PooledObject> pooledObjects;
+
+    private int firstAccessibleObjectIndex;
 
 
     protected virtual void Awake()
     {
-        pooledObjects = new List<GameObject>(capacity);
+        pooledObjects = new List<PooledObject>(capacity);
 
-        for (int i = 0; i < poolAmount; i++)
+        for (int i = 0; i < capacity; i++)
         {
             pooledObjects.Add(CreateObject());
         }
     }
 
 
-    public GameObject GetObject()
+    public PooledObject Pull()
     {
-        for (int i = 0; i < poolAmount; i++)
+        if (firstAccessibleObjectIndex < capacity)
         {
-            if (!pooledObjects[i].activeInHierarchy)
+            pooledObjects[firstAccessibleObjectIndex].IsFree = false;
+
+            return pooledObjects[firstAccessibleObjectIndex++];
+        }
+
+        for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            if (!pooledObjects[i].IsFree)
             {
                 return pooledObjects[i];
             }
@@ -41,18 +50,37 @@ public class ObjectPooler : MonoBehaviour
 
             return newObject;
         }
+
         return null;
     }
-    public void ReturnObject(GameObject gameObject)
+    public void Push(PooledObject pooledObject)
     {
-        gameObject.SetActive(false);
+        pooledObject.GameObject.SetActive(false);
+        pooledObject.IsFree = false;
     }
 
-    protected virtual GameObject CreateObject()
+    protected virtual PooledObject CreateObject()
     {
-        GameObject obj = Instantiate(itemToPool, this.transform);
+        GameObject obj = Instantiate(pooledObject, this.transform);
         obj.SetActive(false);
 
-        return obj;
+        return new PooledObject(obj);
     }
+}
+
+public class PooledObject
+{
+    private bool isFree;
+    private GameObject gameObject;
+
+
+    public PooledObject(GameObject gameObject)
+    {
+        this.isFree = true;
+        this.gameObject = gameObject;
+    }
+
+
+    public bool IsFree { get => isFree; set => isFree = value; }
+    public GameObject GameObject => gameObject;
 }

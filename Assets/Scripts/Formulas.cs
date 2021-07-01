@@ -16,7 +16,7 @@ public static class Formulas
     }
     public static Vector3 FallenFlow(double cosnt, Vector3 t)
     {
-        return (float)(Constants.H * cosnt * (1 - Constants.APLHA * Constants.P - Constants.KSI)) * t;
+        return (float)(Constants.H * cosnt * (1 - Constants.APLHA * Constants.RHO - Constants.HI)) * t;
     }
     public static Vector3 InverseReflectedFlow(double cosnt, Vector3 t)
     {
@@ -24,14 +24,14 @@ public static class Formulas
     }
     public static Vector3 DiffuseReflectedFlow(double cosnt, Vector3 n)
     {
-        return (float)(2.0d / 3.0d * Constants.H * Constants.APLHA * (1 - Constants.P - Constants.BETA) * cosnt) * n;
+        return (float)(2.0d / 3.0d * Constants.H * Constants.APLHA * (1 - Constants.RHO - Constants.BETA) * cosnt) * n;
     }
     public static Vector3 AsymmetricalEmitedFlow(double cosnt, Vector3 n)
     {
-        return (float)(Constants.ZN * 2.0d / 3.0d * Constants.H * (1 - Constants.APLHA - Constants.KSI) * (1 - Constants.NU) * cosnt) * n;
+        return (float)(Constants.ZN * 2.0d / 3.0d * Constants.H * (1 - Constants.APLHA - Constants.HI) * (1 - Constants.ETA) * cosnt) * n;
     }
     public static Vector3 SpecularReflectedFlow(double cosnt, Vector3 n)
     {
-        return (float)(2.0d * Constants.H * Constants.APLHA * Constants.P * (cosnt * cosnt)) * n;
+        return (float)(2.0d * Constants.H * Constants.APLHA * Constants.RHO * (cosnt * cosnt)) * n;
     }
 }

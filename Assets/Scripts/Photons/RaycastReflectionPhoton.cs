@@ -7,13 +7,13 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
 {
     [SerializeField] private int maxReflectionsCount;
     [SerializeField] private float maxLength;
-    [SerializeField] private RaycastReflectionPhoton prefab;
     [Space(12)]
     [SerializeField] private float startEnergy;
     [SerializeField] private float minEnergy;
 
 
     private LineRenderer lineRenderer;
+    private ObjectPooler photonPooler;
 
 
     private void Awake()
@@ -23,6 +23,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
         {
             gameObject.AddComponent<LineRenderer>();
         }
+
+        photonPooler = GameObject.FindObjectOfType<ObjectPooler>();
     }
 
 
@@ -32,9 +34,14 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     }
     public void Throw(Vector3 startPosition, Vector3 direction, float energy)
     {
+        StartCoroutine(ThrowRoutine(startPosition, direction, energy));
+    }
+
+    private IEnumerator ThrowRoutine(Vector3 startPosition, Vector3 direction, float energy)
+    {
         if (energy < minEnergy)
         {
-            return;
+            yield break;
         }
 
         Ray ray = new Ray(startPosition, direction);
@@ -60,17 +67,25 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                 remainingLength -= Vector3.Distance(ray.origin, hit.point);
                 ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
 
+                yield return new WaitForEndOfFrame();
+
                 // secondary ray
                 float x = Random.Range(-1.0f, 1.0f);
                 float y = Random.Range(-1.0f, 1.0f);
                 float zLength = Random.Range(0.0f, 1.0f);
-                float z = (x * hit.normal.x + y * hit.normal.y) / zLength * hit.normal.z;
+                float z = (x * hit.normal.x + y * hit.normal.y) / hit.normal.z;
                 Vector3 perpendicularVector = new Vector3(x, y, z);
-                Vector3 diffuseDirection = perpendicularVector + hit.normal;
+                Vector3 diffuseDirection = perpendicularVector + (hit.normal * zLength);
 
-                var secondaryPhoton = Instantiate<RaycastReflectionPhoton>(prefab, hit.point, Quaternion.identity, transform);
+                var secondaryPhoton = photonPooler.Pull().GameObject.GetComponent<RaycastReflectionPhoton>();
+                secondaryPhoton.gameObject.SetActive(true);
                 secondaryPhoton.Throw(hit.point, diffuseDirection, energy);
             }
+        }
+
+        if (lineRenderer.positionCount == 1)
+        {
+            //photonPooler.Push(this.gameObject);
         }
     }
 }

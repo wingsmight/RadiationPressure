@@ -2615,7 +2615,7 @@ MonoBehaviour:
   photonPrefab: {fileID: 4416718598542779820, guid: c34776d5e23c48042a8b39fb98b1526f, type: 3}
   offsetObjectPooler: {fileID: 1444482350}
   photonsCountInputField: {fileID: 1689327719}
-  photonsCount: 100
+  photonsCount: 10000
   startEnergy: 100
 --- !u!114 &1444482350
 MonoBehaviour:
@@ -2629,12 +2629,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c384d2165088e4d97c2c7292f13f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 100
-  poolAmount: 100
+  capacity: 10000
   canExpand: 1
-  itemToPool: {fileID: 1466866179005634238, guid: 8bfa754d972144e329bf514e0a3d7bc4, type: 3}
+  pooledObject: {fileID: 1466866179005634238, guid: 8bfa754d972144e329bf514e0a3d7bc4, type: 3}
   dimension: 2
-  betweenOffset: {x: 0.1, y: 0.1, z: 0.1}
+  betweenOffset: {x: 0.001, y: 0.001, z: 0.001}
 --- !u!1 &1572825790
 GameObject:
   m_ObjectHideFlags: 0
