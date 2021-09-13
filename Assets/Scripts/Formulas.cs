@@ -6,7 +6,7 @@ public static class Formulas
 {
     public static Vector3 RadiationForce(Vector3 n, Vector3 t)
     {
-        double cosnt = Vector3.Angle(n, t);
+        double cosnt = Mathf.Cos(Vector3.Angle(n, t));
 
         return FallenFlow(cosnt, t) +
                 InverseReflectedFlow(cosnt, t) +
