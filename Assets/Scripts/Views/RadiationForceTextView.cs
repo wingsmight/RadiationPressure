@@ -10,6 +10,6 @@ public class RadiationForceTextView : MonoBehaviour
 
     private void Update()
     {
-        textView.text = PhotonGenerator.radiatoinForce.ToString("F8");
+        textView.text = PhotonGenerator.radiatoinForce.ToString("F10");
     }
 }
