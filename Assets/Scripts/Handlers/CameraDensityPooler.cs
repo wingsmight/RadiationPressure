@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CameraDensityPooler : ObjectPooler
 {
-    private const float CAMERA_BOUND_SCALER = 2.0f;
+    private const float CAMERA_BOUND_SCALER = 1.0f;
 
 
     [SerializeField] private new Camera camera;
-    [Space(12)]
-    [SerializeField] private float density;
+    
+
+    private float density = 5.0f;
 
 
     protected override void Awake()
@@ -25,6 +26,7 @@ public class CameraDensityPooler : ObjectPooler
         int verticalObjectCount = horizontalObjectCount;
         base.capacity = horizontalObjectCount * verticalObjectCount;
 
+        Clean();
         base.Awake();
 
         Vector3 startPoint = new Vector3(-rectangleWidth / 2, -rectangleHeight / 2, 0);
@@ -34,10 +36,24 @@ public class CameraDensityPooler : ObjectPooler
             for (int verticalObjectIndex = 0; verticalObjectIndex < verticalObjectCount; verticalObjectIndex++)
             {
                 pooledObjects[objectIndex].GameObject.transform.localPosition = startPoint + new Vector3(horizontalObjectDistance * horizontalObjectIndex, verticalObjectDistance * verticalObjectIndex, 0);
-                pooledObjects[objectIndex].GameObject.SetActive(true);
 
                 objectIndex++;
             }
+        }
+    }
+
+
+    public void Init(float density)
+    {
+        this.density = density;
+
+        Awake();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Clean();
         }
     }
 }

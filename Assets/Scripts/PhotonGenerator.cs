@@ -8,33 +8,16 @@ public class PhotonGenerator : MonoBehaviour
 {
     [SerializeField] [RequireInterface(typeof(IPhoton))] private Object photonPrefab;
     [SerializeField] private ObjectPooler photonPooler;
-    [SerializeField] private TMP_InputField photonsCountInputField;
     [Space(12)]
-    [SerializeField] private int photonsCount;
     [SerializeField] private float startEnergy;
 
 
     public static Vector3 radiatoinForce = Vector3.zero;
 
 
-    private void Awake()
-    {
-
-    }
-    private void Start()
-    {
-        photonsCountInputField.text = photonsCount.ToString();
-        photonsCountInputField.onValueChanged.AddListener((text) =>
-        {
-            if (!int.TryParse(text, out photonsCount))
-            {
-                photonsCount = 0;
-            }
-        });
-    }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             Throw();
         }
@@ -43,6 +26,7 @@ public class PhotonGenerator : MonoBehaviour
 
     public void Throw()
     {
+        radiatoinForce = Vector3.zero;
         RaycastReflectionPhoton.caughtPhtotonCount = 0;
 
         StartCoroutine(ThrowRoutine());
@@ -50,7 +34,7 @@ public class PhotonGenerator : MonoBehaviour
 
     private IEnumerator ThrowRoutine()
     {
-        for (int i = 0; i < photonsCount; i++)
+        for (int i = 0; i < photonPooler.Capacity; i++)
         {
             var pooledPhotonObject = photonPooler.Pull();
             pooledPhotonObject.GameObject.SetActive(true);

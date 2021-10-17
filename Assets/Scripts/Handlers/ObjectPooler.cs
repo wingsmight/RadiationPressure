@@ -10,7 +10,7 @@ public class ObjectPooler : MonoBehaviour
     [SerializeField] protected GameObject pooledObject;
 
 
-    protected List<PooledObject> pooledObjects;
+    protected List<PooledObject> pooledObjects = new List<PooledObject>();
 
     private int firstAccessibleObjectIndex;
 
@@ -66,6 +66,17 @@ public class ObjectPooler : MonoBehaviour
 
         return new PooledObject(obj);
     }
+    protected void Clean()
+    {
+        for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            Destroy(pooledObjects[i].GameObject);
+        }
+        firstAccessibleObjectIndex = 0;
+    }
+
+
+    public int Capacity => capacity;
 }
 
 public class PooledObject

@@ -4,14 +4,25 @@ using UnityEngine;
 using TMPro;
 using System.Text.RegularExpressions;
 
-public class ThrownPhotonsCountInputView : MonoBehaviour
+public class PhotonDensityInputView : MonoBehaviour
 {
     [SerializeField] private TMP_InputField inputField;
+    [Space(12)]
+    [SerializeField] private int defaultValue;
 
 
     private void Awake()
     {
+        Reset();
+
         inputField.onValidateInput += ValidateInput;
+    }
+
+
+    public void Reset()
+    {
+        inputField.text = defaultValue.ToString();
+        inputField.interactable = true;
     }
 
 
@@ -22,4 +33,8 @@ public class ThrownPhotonsCountInputView : MonoBehaviour
 
         return addedChar;
     }
+
+
+    public int Value => int.Parse(inputField.text);
+    public bool Interactable { get => inputField.interactable; set => inputField.interactable = value; }
 }
