@@ -16,6 +16,9 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     private ObjectPooler photonPooler;
 
 
+    public static int caughtPhtotonCount = 0;
+
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -55,6 +58,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
         {
             if (Physics.Raycast(ray.origin, ray.direction, out var hit, remainingLength))
             {
+                caughtPhtotonCount++;
+
                 // reduce energy
                 energy /= 2.0f;
 

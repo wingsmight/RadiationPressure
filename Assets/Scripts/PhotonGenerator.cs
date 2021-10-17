@@ -7,7 +7,7 @@ using TMPro;
 public class PhotonGenerator : MonoBehaviour
 {
     [SerializeField] [RequireInterface(typeof(IPhoton))] private Object photonPrefab;
-    [SerializeField] private OffsetObjectPooler offsetObjectPooler;
+    [SerializeField] private ObjectPooler photonPooler;
     [SerializeField] private TMP_InputField photonsCountInputField;
     [Space(12)]
     [SerializeField] private int photonsCount;
@@ -43,6 +43,8 @@ public class PhotonGenerator : MonoBehaviour
 
     public void Throw()
     {
+        RaycastReflectionPhoton.caughtPhtotonCount = 0;
+
         StartCoroutine(ThrowRoutine());
     }
 
@@ -50,7 +52,7 @@ public class PhotonGenerator : MonoBehaviour
     {
         for (int i = 0; i < photonsCount; i++)
         {
-            var pooledPhotonObject = offsetObjectPooler.Pull();
+            var pooledPhotonObject = photonPooler.Pull();
             pooledPhotonObject.GameObject.SetActive(true);
             IPhoton photon = pooledPhotonObject.GameObject.GetComponent<IPhoton>();
             photon.Throw(pooledPhotonObject.GameObject.transform.position, transform.forward, startEnergy);
