@@ -8,11 +8,15 @@ public class RadiationPressureTextView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textView;
     [SerializeField] private TMP_InputField cubeWidthInputField;
     [SerializeField] private TMP_InputField cubeHieghtInputField;
+    [SerializeField] private SatelliteArea satelliteArea;
 
 
-    private void Update()
+    private float overallArea;
+
+
+    private void FixedUpdate()
     {
-        var pressure = PhotonGenerator.radiatoinForce / ((int.Parse(cubeWidthInputField.text) * int.Parse(cubeHieghtInputField.text)) * RaycastReflectionPhoton.caughtPhtotonCount);
+        var pressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea * RaycastReflectionPhoton.caughtPhtotonCount);
 
         textView.text = pressure.ToString("E");
     }
