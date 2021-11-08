@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class DetailMeasureView : MonoBehaviour
+public abstract class SelectionSettingsView : MonoBehaviour
 {
     [SerializeField] protected FadeAnimation fadeAnimation;
     [SerializeField] protected RaycastSelection raycastSelection;
@@ -11,7 +11,7 @@ public abstract class DetailMeasureView : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (raycastSelection.CurrentSelection != null && raycastSelection.CurrentSelection.TryGetComponent(DetailType, out var component))
+        if (raycastSelection.CurrentSelection != null && raycastSelection.CurrentSelection.TryGetComponent(ShowOnType, out var component))
         {
             fadeAnimation.Appear();
         }
@@ -22,5 +22,5 @@ public abstract class DetailMeasureView : MonoBehaviour
     }
 
 
-    protected abstract Type DetailType { get; }
+    protected abstract Type ShowOnType { get; }
 }

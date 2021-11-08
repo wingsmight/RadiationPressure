@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RectangleDetailMeasureView : DetailMeasureView
+public class RectangleDetailMeasureView : SelectionSettingsView
 {
     [SerializeField] private TMP_InputField widthInputField;
     [SerializeField] private TMP_InputField heightInputField;
@@ -21,5 +21,10 @@ public class RectangleDetailMeasureView : DetailMeasureView
             raycastSelection.CurrentSelection.GetComponent<RectangleDetail>().Height = float.Parse(newValue);
         });
     }
-    protected override Type DetailType => typeof(RectangleDetail);
+    private void OnDestroy()
+    {
+        widthInputField.onValueChanged.RemoveAllListeners();
+        heightInputField.onValueChanged.RemoveAllListeners();
+    }
+    protected override Type ShowOnType => typeof(RectangleDetail);
 }
