@@ -10,7 +10,6 @@ public class RaycastSelection : MonoBehaviour
 
     private Vector3 screenCenter;
     private Transform selectedTransform = null;
-    private Material defaultMaterial = null;
 
 
     private void Awake()
@@ -29,9 +28,8 @@ public class RaycastSelection : MonoBehaviour
                 var selectionRenderer = selectedTransform.GetComponent<Renderer>();
                 if (selectionRenderer != null)
                 {
-                    selectionRenderer.material = defaultMaterial;
+                    selectionRenderer.materials = new Material[1] { selectionRenderer.material };
                     selectedTransform = null;
-                    defaultMaterial = null;
                 }
             }
 
@@ -39,20 +37,16 @@ public class RaycastSelection : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var newSelectedTransform = hit.transform;
-                var selectionRenderer = newSelectedTransform.GetComponent<Renderer>();
-                if (selectionRenderer != null)
+                var newSelectionRenderer = newSelectedTransform.GetComponent<Renderer>();
+                if (newSelectionRenderer != null)
                 {
                     if (selectedTransform != null)
                     {
-                        selectedTransform.GetComponent<Renderer>().material = defaultMaterial;
+                        var selectedRenderer = selectedTransform.GetComponent<Renderer>();
+                        selectedRenderer.materials = new Material[1] { selectedRenderer.material };
                     }
 
-                    if (defaultMaterial == null)
-                    {
-                        defaultMaterial = selectionRenderer.material;
-                    }
-
-                    selectionRenderer.material = highlightMaterial;
+                    newSelectionRenderer.materials = new Material[2] { newSelectionRenderer.material, highlightMaterial };
                     selectedTransform = newSelectedTransform;
                 }
             }
