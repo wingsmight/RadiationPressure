@@ -3377,6 +3377,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3450,6 +3451,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5, y: 90, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be238476acdd94c358b5cdc641fe0b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseSensitivity: 8
+  _target: {fileID: 1305610932}
+  _distanceFromTarget: 100
+  _smoothTime: 0.2
+  _rotationXMinMax: {x: -40, y: 40}
+  startPosition: {x: -82, y: 27.5, z: 0}
+  startRotation: {x: 5, y: 90, z: 0}
 --- !u!1 &973546525
 GameObject:
   m_ObjectHideFlags: 0
@@ -7590,7 +7610,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977614063}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
