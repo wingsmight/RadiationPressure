@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxReflectionsCount: 20
-  maxLength: 500
+  maxLength: 5000
   startEnergy: 100
   minEnergy: 1

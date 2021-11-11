@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraDensityPooler : ObjectPooler
 {
-    private const float CAMERA_BOUND_SCALER = 1.0f;
+    private const float CAMERA_BOUND_SCALER = 3.0f;
 
 
     [SerializeField] private new Camera camera;
-    
+
 
     private float density = 5.0f;
 
