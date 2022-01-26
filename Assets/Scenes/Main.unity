@@ -1143,6 +1143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder
       objectReference: {fileID: 0}
+    - target: {fileID: 5478559094526391552, guid: 36b81791aac654dfa8a9c56c18b12ab3, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6239362086497881890, guid: 36b81791aac654dfa8a9c56c18b12ab3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

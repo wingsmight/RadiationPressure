@@ -50,8 +50,6 @@ public class RaycastSelection : MonoBehaviour
                     selectedTransform = newSelectedTransform;
                 }
             }
-
-            print("selectedTransform = " + selectedTransform);
         }
     }
 
