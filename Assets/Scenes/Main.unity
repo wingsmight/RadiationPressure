@@ -3767,7 +3767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0411\u0435\u0437 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430"
+  m_text: "\u041A\u043E\u0440\u043F\u0443\u0441"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7449,11 +7449,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "\u0411\u0435\u0437 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430"
+    - m_Text: "\u041A\u043E\u0440\u043F\u0443\u0441"
       m_Image: {fileID: 0}
-    - m_Text: "\u0421\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F \u0431\u0430\u0442\u0430\u0440\u0435\u044F"
+    - m_Text: "\u0420\u0443\u0447\u043A\u0430"
       m_Image: {fileID: 0}
-    - m_Text: "\u041F\u043B\u0435\u043D\u043A\u0430 C"
+    - m_Text: "\u0420\u0430\u0434\u0438\u0430\u0446. \u043F\u043E\u0432\u0435\u0440\u0445."
+      m_Image: {fileID: 0}
+    - m_Text: "\u0421\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F \u043F\u0430\u043D\u0435\u043B\u044C"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9436,7 +9438,7 @@ GameObject:
   - component: {fileID: 1977614066}
   - component: {fileID: 1977614065}
   m_Layer: 5
-  m_Name: MaterialExchange
+  m_Name: CoatingExchange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9499,16 +9501,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1977614063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d83c7b080b9542ebbd998d60c69c3a8, type: 3}
+  m_Script: {fileID: 11500000, guid: f86b7410a4e374562ace8a42ad41cc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAnimation: {fileID: 1977614065}
   raycastSelection: {fileID: 1029786756}
   dropdown: {fileID: 1492247159}
-  materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: 88836f59d1953424bb30a78dd47b0294, type: 2}
-  - {fileID: 2100000, guid: 0c13ec390930d40b1b5cbd06c3c038d6, type: 3}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
 --- !u!1001 &1984061129
 PrefabInstance:
   m_ObjectHideFlags: 0
