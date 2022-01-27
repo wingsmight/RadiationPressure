@@ -28,17 +28,11 @@ public class ObjectPooler : MonoBehaviour
 
     public PooledObject Pull()
     {
-        if (firstAccessibleObjectIndex < capacity)
-        {
-            pooledObjects[firstAccessibleObjectIndex].IsFree = false;
-
-            return pooledObjects[firstAccessibleObjectIndex++];
-        }
-
         for (int i = 0; i < pooledObjects.Count; i++)
         {
-            if (!pooledObjects[i].IsFree)
+            if (pooledObjects[i].IsFree)
             {
+                pooledObjects[i].IsFree = false;
                 return pooledObjects[i];
             }
         }
@@ -48,6 +42,9 @@ public class ObjectPooler : MonoBehaviour
             var newObject = CreateObject();
             pooledObjects.Add(newObject);
 
+            capacity++;
+
+            newObject.IsFree = false;
             return newObject;
         }
 
@@ -56,7 +53,16 @@ public class ObjectPooler : MonoBehaviour
     public void Push(PooledObject pooledObject)
     {
         pooledObject.GameObject.SetActive(false);
-        pooledObject.IsFree = false;
+        pooledObject.IsFree = true;
+    }
+    public void Push(GameObject pooledObject)
+    {
+        var pushedPooledObject = pooledObjects.Find(x => x.GameObject == pooledObject);
+
+        if (pushedPooledObject != null)
+        {
+            Push(pushedPooledObject);
+        }
     }
 
     protected virtual PooledObject CreateObject()
@@ -66,7 +72,7 @@ public class ObjectPooler : MonoBehaviour
 
         return new PooledObject(obj);
     }
-    protected void Clean()
+    protected void Clear()
     {
         for (int i = 0; i < pooledObjects.Count; i++)
         {

@@ -26,7 +26,7 @@ public class CameraDensityPooler : ObjectPooler
         int verticalObjectCount = horizontalObjectCount;
         base.capacity = horizontalObjectCount * verticalObjectCount;
 
-        Clean();
+        Clear();
         base.Awake();
 
         Vector3 startPoint = new Vector3(-rectangleWidth / 2, -rectangleHeight / 2, 0);
@@ -41,6 +41,13 @@ public class CameraDensityPooler : ObjectPooler
             }
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Clear();
+        }
+    }
 
 
     public void Init(float density)
@@ -48,12 +55,5 @@ public class CameraDensityPooler : ObjectPooler
         this.density = density;
 
         Awake();
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Clean();
-        }
     }
 }

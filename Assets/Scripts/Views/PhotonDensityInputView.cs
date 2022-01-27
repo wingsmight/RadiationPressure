@@ -35,6 +35,6 @@ public class PhotonDensityInputView : MonoBehaviour
     }
 
 
-    public int Value => int.Parse(inputField.text);
+    public float Value => float.Parse(inputField.text);
     public bool Interactable { get => inputField.interactable; set => inputField.interactable = value; }
 }

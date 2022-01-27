@@ -8,7 +8,7 @@ public class ThrowPhotonsButton : MonoBehaviour
     [SerializeField] private Button button;
     [Space(12)]
     [SerializeField] private PhotonGenerator photonGenerator;
-    [SerializeField] private CameraDensityPooler cameraDensityPooler;
+    [SerializeField] private DensityPool cameraDensityPooler;
     [SerializeField] private PhotonDensityInputView densityInputView;
 
 
