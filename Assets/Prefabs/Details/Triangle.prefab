@@ -110,6 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd50f9d01f6e24cac979ef90acb95197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 2274997348458342551}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   width: 10
   height: 10
 --- !u!1 &2785328759803372074
@@ -222,6 +229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 2789164365555051298}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   width: 10
   height: 10
 --- !u!1 &4544752662194035704
@@ -369,6 +383,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd50f9d01f6e24cac979ef90acb95197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 4641058900126146566}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   width: 10
   height: 10
 --- !u!1 &8311103125116691160
@@ -480,6 +501,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 1395300702299286612}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   width: 10
   height: 10
 --- !u!1 &9079214817259496892
@@ -591,5 +619,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 1101696680683566339}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   width: 10
   height: 10

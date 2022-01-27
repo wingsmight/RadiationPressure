@@ -96,6 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b3dcbba42b0478bafacb5bf4448809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 6288382124725391687}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   height: 10
   radius: 5
 --- !u!65 &8990403720193062709
@@ -207,6 +214,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 6391246329161005923}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   radius: 5
 --- !u!65 &2179387405573839545
 BoxCollider:
@@ -350,6 +364,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 6239362086497881890}
+  coatings:
+  - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
+  - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
+  - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}
+  - {fileID: 11400000, guid: 54909132df81d44d6aba8faaf0b5b584, type: 2}
   radius: 5
 --- !u!65 &978115132594783750
 BoxCollider:

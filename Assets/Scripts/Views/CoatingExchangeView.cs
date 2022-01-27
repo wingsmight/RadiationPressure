@@ -8,7 +8,7 @@ using UnityEngine;
 public class CoatingExchangeView : SelectionSettingsView
 {
     [SerializeField] private TMP_Dropdown dropdown;
-    [SerializeField] private List<Сoating> coatings;
+    [SerializeField] private List<Coating> coatings;
 
 
     private void Awake()
@@ -17,19 +17,27 @@ public class CoatingExchangeView : SelectionSettingsView
         {
             if (isActive)
             {
-                var currentMaterial = raycastSelection.CurrentSelection.GetComponent<MeshRenderer>().material;
-                int currentMaterialIndex = coatings.FindIndex(x => x.Material.name.Contains(currentMaterial.name) || currentMaterial.name.Contains(x.Material.name));
-                dropdown.SetValueWithoutNotify(currentMaterialIndex);
+                var currentCoating = raycastSelection.CurrentSelection.GetComponent<Detail>().Coating;
+                int currentCoatingIndex = coatings.FindIndex(x => x.Material.name.Contains(currentCoating.name) || currentCoating.name.Contains(x.Material.name));
+                dropdown.SetValueWithoutNotify(currentCoatingIndex);
             }
         };
         dropdown.onValueChanged.AddListener((newMaterialIndex) =>
         {
-            raycastSelection.CurrentSelection.GetComponent<MeshRenderer>().material = coatings[newMaterialIndex].Material;
+            var newCoating = coatings[newMaterialIndex];
+            var selectedDetail = raycastSelection.CurrentSelection.GetComponent<Detail>();
+
+            if (selectedDetail != null)
+            {
+                selectedDetail.Coating = newCoating;
+            }
         });
     }
     private void OnDestroy()
     {
         dropdown.onValueChanged.RemoveAllListeners();
     }
-    protected override Type ShowOnType => typeof(MeshRenderer);
+
+
+    protected override Type ShowOnType => typeof(Detail);
 }

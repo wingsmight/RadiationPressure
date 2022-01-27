@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Сoating0", menuName = "Сoatings/Сoating")]
-public class Сoating : ScriptableObject
+public class Coating : ScriptableObject
 {
     [SerializeField] private Material material;
     [SerializeField] private OpticalCoefficients coefficients;
 
 
-    public Material Material => material;
+    //public Material Material => material;
+    public Material Material { get => material; set => material = value; } // TEST
     public OpticalCoefficients Coefficients => coefficients;
 }
 

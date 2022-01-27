@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657725, g: 0.49641198, b: 0.5748184, a: 1}
+  m_IndirectSpecularColor: {r: 0.44900596, g: 0.4990701, b: 0.57570934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2193,6 +2193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   width: 10
   height: 10
 --- !u!1 &531339996
@@ -2419,6 +2421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   radius: 0
 --- !u!1 &539665909
 GameObject:
@@ -3025,6 +3029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   radius: 0
 --- !u!1 &671076124
 GameObject:
@@ -3136,6 +3142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   width: 10
   height: 10
 --- !u!1 &671851550
@@ -3478,7 +3486,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3535,13 +3543,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: 3, z: -8}
+  m_LocalRotation: {x: 0.37192744, y: -0.22649372, z: 0.014291237, w: 0.9000924}
+  m_LocalPosition: {x: 91.8, y: 186.1, z: -149.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 42.533, y: -32.608, z: -11.17}
 --- !u!1 &706047228
 GameObject:
   m_ObjectHideFlags: 0
@@ -5932,6 +5940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   width: 10
   height: 10
 --- !u!1 &1233336193
@@ -7690,6 +7700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   width: 10
   height: 10
 --- !u!1 &1569147270
@@ -9349,6 +9361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e446de15b069c455480b524d5b0a901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   width: 10
   height: 10
 --- !u!1 &1915867970 stripped
@@ -9479,6 +9493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coating: {fileID: 0}
+  meshRenderer: {fileID: 0}
   radius: 10
 --- !u!1 &1965080842
 GameObject:
