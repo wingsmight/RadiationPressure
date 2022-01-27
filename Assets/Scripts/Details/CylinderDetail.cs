@@ -5,10 +5,43 @@ using UnityEngine;
 public class CylinderDetail : Detail
 {
     [SerializeField] private float height;
-    [SerializeField] private float radius;
+    [SerializeField] private float diameter;
 
 
-    public float Height { get => height; set => height = value; }
-    public float Radius { get => radius; set => radius = value; }
-    public override float Area => 2 * Mathf.PI * radius * height;
+    private void Awake()
+    {
+        height = transform.localScale.y;
+        diameter = transform.localScale.x;
+
+        Scale();
+    }
+
+
+    private void Scale()
+    {
+        transform.localScale = new Vector3(diameter, diameter, height);
+    }
+
+
+    public float Height
+    {
+        get => height;
+        set
+        {
+            height = value;
+
+            Scale();
+        }
+    }
+    public float Diameter
+    {
+        get => diameter;
+        set
+        {
+            diameter = value;
+
+            Scale();
+        }
+    }
+    public override float Area => Mathf.PI * diameter * height;
 }

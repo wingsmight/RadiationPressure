@@ -31,5 +31,7 @@ public class MaterialExchangeView : SelectionSettingsView
     {
         dropdown.onValueChanged.RemoveAllListeners();
     }
+
+
     protected override Type ShowOnType => typeof(MeshRenderer);
 }
