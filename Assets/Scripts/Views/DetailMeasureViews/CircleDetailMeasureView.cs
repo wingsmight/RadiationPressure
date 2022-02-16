@@ -6,19 +6,19 @@ using TMPro;
 
 public class CircleDetailMeasureView : SelectionSettingsView
 {
-    [SerializeField] private TMP_InputField radiusInputField;
+    [SerializeField] private TMP_InputField diameterInputField;
 
 
     private void Awake()
     {
-        radiusInputField.onValueChanged.AddListener((newValue) =>
+        diameterInputField.onValueChanged.AddListener((newValue) =>
         {
-            raycastSelection.CurrentSelection.GetComponent<CircleDetail>().Radius = float.Parse(newValue);
+            raycastSelection.CurrentSelection.GetComponent<CircleDetail>().Diameter = float.Parse(newValue);
         });
     }
     private void OnDestroy()
     {
-        radiusInputField.onValueChanged.RemoveAllListeners();
+        diameterInputField.onValueChanged.RemoveAllListeners();
     }
     protected override Type ShowOnType => typeof(CircleDetail);
 }

@@ -12,8 +12,6 @@ public class ObjectPooler : MonoBehaviour
 
     protected List<PooledObject> pooledObjects = new List<PooledObject>();
 
-    private int firstAccessibleObjectIndex;
-
 
     protected virtual void Awake()
     {
@@ -78,7 +76,6 @@ public class ObjectPooler : MonoBehaviour
         {
             Destroy(pooledObjects[i].GameObject);
         }
-        firstAccessibleObjectIndex = 0;
     }
 
 
