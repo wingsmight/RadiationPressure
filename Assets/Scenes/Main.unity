@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44900596, g: 0.4990701, b: 0.57570934, a: 1}
+  m_IndirectSpecularColor: {r: 0.44900614, g: 0.49907047, b: 0.57570964, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6351,7 +6351,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
     - target: {fileID: 4544752662194035704, guid: 2e16c51a6c31b4dec8a6319c8ac63e14, type: 3}
       propertyPath: m_Name
-      value: Triangle
+      value: Prism
       objectReference: {fileID: 0}
     - target: {fileID: 4641058900126146566, guid: 2e16c51a6c31b4dec8a6319c8ac63e14, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -11338,7 +11338,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
     - target: {fileID: 4544752662194035704, guid: 2e16c51a6c31b4dec8a6319c8ac63e14, type: 3}
       propertyPath: m_Name
-      value: Triangle (1)
+      value: Prism
       objectReference: {fileID: 0}
     - target: {fileID: 4641058900126146566, guid: 2e16c51a6c31b4dec8a6319c8ac63e14, type: 3}
       propertyPath: m_Materials.Array.data[0]
