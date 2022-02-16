@@ -1,0 +1,22 @@
+{
+    "name": "Battlehub.RTScripting",
+    "references": [
+        "GUID:8e6c9de9865976e4a9ae5319c0251b65",
+        "GUID:b9f5efe54bcd2ad429a32b7c3dbfb90f",
+        "GUID:fb20bc2d30583e34fba2eb37c20bd497",
+        "GUID:ac16a7f1382387c4fb4aa45510c7883d",
+        "GUID:8fc108502a9b1ee45af373fc453fa4aa",
+        "GUID:26441a3f7503e0f42b3fd97b6f274fcd",
+        "GUID:fed6a052439fabe41aacb7a7982d3b14",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

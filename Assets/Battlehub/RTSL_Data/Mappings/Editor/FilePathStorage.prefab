@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7738954619078706040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3259008376219815932}
+  - component: {fileID: 3599615616588883921}
+  m_Layer: 0
+  m_Name: FilePathStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3259008376219815932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738954619078706040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3599615616588883921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738954619078706040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d511e1d74299419974f87a9464299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PathRecords:
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentMesh
+    File: {fileID: 11500000, guid: 8bdb7fb8521f14f21b172cd84c076f28, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentMaterial
+    File: {fileID: 11500000, guid: 8e0b1514cdc1146af93373d90f244b29, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentAudioClip
+    File: {fileID: 11500000, guid: 979d89af83ed34a2eb098e69ce5c8f24, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentAnimator
+    File: {fileID: 11500000, guid: a59ce4fff35eb470195bb8eae563bf48, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentAvatar
+    File: {fileID: 11500000, guid: a8177c3026d9f4c21a674087949a562e, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem
+    File: {fileID: 11500000, guid: d983918255c2d4275ada67d55808f034, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentTerrainData
+    File: {fileID: 11500000, guid: d2daef94918ea430a9fa748dca32a90f, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentTexture2D
+    File: {fileID: 11500000, guid: d8b652d6c759a46e8b16fdcfbf23bb35, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystemForceField
+    File: {fileID: 11500000, guid: 18a199732f6194df785fc5fe389af3e1, type: 3}
+  - PeristentTypeName: Battlehub.RTEditor.Battlehub.SL2.PersistentRuntimeAnimation
+    File: {fileID: 11500000, guid: 0e460d9b92bcd4750aab6970192bf757, type: 3}
+  - PeristentTypeName: Battlehub.RTEditor.Battlehub.SL2.PersistentRuntimeAnimationClip
+    File: {fileID: 11500000, guid: abfa941dfb59242adbe8d47d4c2d7a5e, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentAnimationCurve
+    File: {fileID: 11500000, guid: 72a433106beb249cea08fa113cf8b146, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentGradient
+    File: {fileID: 11500000, guid: f39d6d1cdece64138b2d9efffa34c3b2, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentKeyframe
+    File: {fileID: 11500000, guid: 28f8c438a2eea4ed8855870a65a0be4d, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+CollisionModule
+    File: {fileID: 11500000, guid: b9a23ff7a223f4401a28e697e00c9ebb, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+CustomDataModule
+    File: {fileID: 11500000, guid: b84438f2fd8e74652ac12f7cd7aab0c2, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+EmissionModule
+    File: {fileID: 11500000, guid: aca8814bb40534403a48c2e748387460, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+ExternalForcesModule
+    File: {fileID: 11500000, guid: 65eab835e11dd45eeac3e2449d7d7153, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+SubEmittersModule
+    File: {fileID: 11500000, guid: 31be06c613d5140908be26e58dd63eea, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+TriggerModule
+    File: {fileID: 11500000, guid: c5398ad564cfd465691d03105b03dcad, type: 3}
+  - PeristentTypeName: UnityEngine.Battlehub.SL2.PersistentParticleSystem+TextureSheetAnimationModule
+    File: {fileID: 11500000, guid: f5cda4612f1354ebca23a295e65cf99c, type: 3}
+  - PeristentTypeName: Battlehub.RTEditor.Battlehub.SL2.PersistentRuntimeAnimationProperty
+    File: {fileID: 11500000, guid: 40d38fe85f1e048988a80be3d29e8734, type: 3}

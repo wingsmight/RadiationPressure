@@ -1,0 +1,19 @@
+{
+  "name": "com.battlehub.net.rtscripting",
+  "version": "2.26.0",
+  "displayName": "Runtime Editor Scripting Support",
+  "description": "Runtime Editor Scripting Support",
+  "unity": "2020.1",
+  "unityRelease": "0b5",
+  "dependencies": {
+      "com.battlehub.net.rteditor": "2.26"
+  },
+  "keywords": [
+    "runtime editor scripting support"
+  ],
+  "author": {
+    "name": "Battlehub",
+    "email": "Battlehub@outlook.com",
+    "url": "http://www.battlehub.net"
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StringResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Resources>
+	
+		<!-- RTScriptingInit -->
+		<StringResource id="ID_RTScripting_WM_Header_EditScript" value="Edit Script"/>
+		<StringResource id="ID_RTScripting_ProjectFolderView_Create" value="Create"/>
+		<StringResource id="ID_RTScripting_ProjectFolderView_Script" value="Script"/>
+		<StringResource id="ID_RTScripting_ScriptsManager_CompilationFailed" value="Compilation failed"/>
+		<StringResource id="ID_RTScripting_ScriptsManager_CompilationSucceeded" value="Compilation completed successfully"/>
+		<StringResource id="ID_RTScripting_ScriptsManager_Script" value="Script"/>
+
+	</Resources>
+</StringResources>
