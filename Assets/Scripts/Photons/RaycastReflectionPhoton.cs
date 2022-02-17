@@ -52,6 +52,11 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, startPosition);
 
+        // TEST
+        lineRenderer.positionCount++;
+        lineRenderer.SetPosition(1, startPosition + direction * 10);
+        // TEST
+
         float remainingLength = maxLength;
 
         for (int i = 0; i < maxReflectionsCount; i++)
@@ -72,8 +77,6 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                     // primary ray
                     lineRenderer.positionCount++;
                     lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
-                    // lineRenderer.positionCount++;
-                    // lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                     remainingLength -= Vector3.Distance(ray.origin, hit.point);
                     ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
 

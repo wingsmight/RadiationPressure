@@ -80,7 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902664676824654773}
   m_Layer: 0
-  m_Name: RightSollerCell
+  m_Name: RightSollarCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,6 +8,7 @@ public class PhotonGenerator : MonoBehaviour
 {
     [SerializeField] [RequireInterface(typeof(IPhoton))] private Object photonPrefab;
     [SerializeField] private ObjectPooler photonPooler;
+    [SerializeField] private Transform satellite;
     [Space(12)]
     [SerializeField] private float startEnergy;
 
