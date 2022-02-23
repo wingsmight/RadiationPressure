@@ -135,8 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_items: []
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
-    type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
   m_anchor: {fileID: 0}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 233234370}
@@ -485,10 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_raycaster: {fileID: 0}
-  m_tabPrefab: {fileID: 6123953020192339200, guid: 8e707ceb975f7cc43b57546c7b660a72,
-    type: 3}
-  m_regionPrefab: {fileID: 4130894439911558076, guid: 0b6743e02eb89554bb2598ab31431ecf,
-    type: 3}
+  m_tabPrefab: {fileID: 6123953020192339200, guid: 8e707ceb975f7cc43b57546c7b660a72, type: 3}
+  m_regionPrefab: {fileID: 4130894439911558076, guid: 0b6743e02eb89554bb2598ab31431ecf, type: 3}
   m_rootRegion: {fileID: 0}
   m_docked: {fileID: 220063214759377217}
   m_free: {fileID: 220052302703447445}
@@ -1238,8 +1235,7 @@ MonoBehaviour:
           m_CallState: 2
     IsVisible: 1
     IsOn: 0
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
-    type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
   m_anchor: {fileID: 5849259614052136183}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 220647733058011166}
@@ -1625,8 +1621,7 @@ MonoBehaviour:
         m_Calls: []
     IsVisible: 1
     IsOn: 0
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
-    type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
   m_anchor: {fileID: 5849259614183290822}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 220647733216695752}
@@ -2000,8 +1995,7 @@ MonoBehaviour:
         m_Calls: []
     IsVisible: 1
     IsOn: 0
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
-    type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
   m_anchor: {fileID: 5849259614214296018}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 220647732588404015}
@@ -2447,8 +2441,7 @@ MonoBehaviour:
           m_CallState: 2
     IsVisible: 1
     IsOn: 0
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
-    type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
   m_anchor: {fileID: 5849259613376326648}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 220647734270409400}
@@ -2666,8 +2659,7 @@ MonoBehaviour:
         m_Calls: []
     IsVisible: 1
     IsOn: 0
-  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f,
-    type: 3}
+  m_menuItemPrefab: {fileID: 114996007241749652, guid: 7f9ab2a07e35b35428a88d28fc4c6b3f, type: 3}
   m_anchor: {fileID: 5849259614669755914}
   m_anchorOffset: {x: 0, y: 0}
   m_panel: {fileID: 220647733537699799}
@@ -4008,6 +4000,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &5849259612640306653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,10 +4121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_topMenu: {fileID: 8723887679692684185}
   m_menuPanel: {fileID: 5849259612951747672}
-  m_menuButtonPrefab: {fileID: 5877049085975820582, guid: b8e8a26402ef59949a86a55fbaacd9fe,
-    type: 3}
-  m_menuPrefab: {fileID: 114641633655484212, guid: 9efa5dfbb900cc447b8f837a8135edc5,
-    type: 3}
+  m_menuButtonPrefab: {fileID: 5877049085975820582, guid: b8e8a26402ef59949a86a55fbaacd9fe, type: 3}
+  m_menuPrefab: {fileID: 114641633655484212, guid: 9efa5dfbb900cc447b8f837a8135edc5, type: 3}
 --- !u!114 &542523821362138760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5627,7 +5618,7 @@ MonoBehaviour:
     UIBackgroundLayer: 16
   m_createHierarchyRoot: 0
   m_useBuiltinUndo: 1
-  m_enableVRIfAvailable: 1
+  m_enableVRIfAvailable: 0
   m_isOpened: 1
   IsOpenedEvent:
     m_PersistentCalls:
@@ -5872,8 +5863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dockPanels: {fileID: 111226606771800033}
-  m_dialogPrefab: {fileID: 563826202299068600, guid: 83500980bcf838946b11c9893bb914d5,
-    type: 3}
+  m_dialogPrefab: {fileID: 563826202299068600, guid: 83500980bcf838946b11c9893bb914d5, type: 3}
 --- !u!114 &5849259614496068624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5890,134 +5880,115 @@ MonoBehaviour:
   m_sceneWindow:
     Icon: {fileID: 21300000, guid: adee4d2c74aa3ed489dc78650267d5c9, type: 3}
     Header: ID_RTEditor_WM_Header_Scene
-    ContentPrefab: {fileID: 1310129391672340, guid: fc7e99f83709bc248a5d6f8bfb3d3b38,
-      type: 3}
+    ContentPrefab: {fileID: 1310129391672340, guid: fc7e99f83709bc248a5d6f8bfb3d3b38, type: 3}
     MaxWindows: 1
     Created: 0
   m_gameWindow:
     Icon: {fileID: 21300000, guid: 0f5af8f5573802443896110107c644a1, type: 3}
     Header: ID_RTEditor_WM_Header_Game
-    ContentPrefab: {fileID: 1310129391672340, guid: 55cfea44f53296f4ab2026741d7a4f43,
-      type: 3}
+    ContentPrefab: {fileID: 1310129391672340, guid: 55cfea44f53296f4ab2026741d7a4f43, type: 3}
     MaxWindows: 1
     Created: 0
   m_hierarchyWindow:
     Icon: {fileID: 21300000, guid: 598ffc666bd444c4dac6b492130f5578, type: 3}
     Header: ID_RTEditor_WM_Header_Hierarchy
-    ContentPrefab: {fileID: 3710511170453618499, guid: 5745ca656c25c944f858b713e21b7406,
-      type: 3}
+    ContentPrefab: {fileID: 3710511170453618499, guid: 5745ca656c25c944f858b713e21b7406, type: 3}
     MaxWindows: 1
     Created: 0
   m_inspectorWindow:
     Icon: {fileID: 21300000, guid: f7581d993ea6f4942b835e5f922cdef6, type: 3}
     Header: ID_RTEditor_WM_Header_Inspector
-    ContentPrefab: {fileID: 5186639825075379583, guid: 8a05de4897cf04045af395318d6cfd0d,
-      type: 3}
+    ContentPrefab: {fileID: 5186639825075379583, guid: 8a05de4897cf04045af395318d6cfd0d, type: 3}
     MaxWindows: 1
     Created: 0
   m_projectWindow:
     Icon: {fileID: 21300000, guid: 747b49ea2fbd21c4a94d5bab52037e80, type: 3}
     Header: ID_RTEditor_WM_Header_Project
-    ContentPrefab: {fileID: 8756119970407778076, guid: 50b7a251d8940714d9c0e900850beb15,
-      type: 3}
+    ContentPrefab: {fileID: 8756119970407778076, guid: 50b7a251d8940714d9c0e900850beb15, type: 3}
     MaxWindows: 1
     Created: 0
   m_consoleWindow:
     Icon: {fileID: 21300000, guid: b7b061b91660ed7428cff11f4afc7180, type: 3}
     Header: ID_RTEditor_WM_Header_Console
-    ContentPrefab: {fileID: 8756119970407778076, guid: 7e3f48a3beee09c4498cda2293499310,
-      type: 3}
+    ContentPrefab: {fileID: 8756119970407778076, guid: 7e3f48a3beee09c4498cda2293499310, type: 3}
     MaxWindows: 1
     Created: 0
   m_animationWindow:
     Icon: {fileID: 21300000, guid: db09905cb4d2c194d82eb81bfe79940e, type: 3}
     Header: ID_RTEditor_WM_Header_Animation
-    ContentPrefab: {fileID: 8756119970407778076, guid: d3df920c84472c2418b495811e6f5204,
-      type: 3}
+    ContentPrefab: {fileID: 8756119970407778076, guid: d3df920c84472c2418b495811e6f5204, type: 3}
     MaxWindows: 1
     Created: 0
   m_saveSceneDialog:
     Icon: {fileID: 21300000, guid: e5a00995c2633e046bcc7a83ad24c42e, type: 3}
     Header: ID_RTEditor_WM_Header_SaveScene
-    ContentPrefab: {fileID: 1000010003848526, guid: bda63a6b64080df4297f99b8a72d520f,
-      type: 3}
+    ContentPrefab: {fileID: 1000010003848526, guid: bda63a6b64080df4297f99b8a72d520f, type: 3}
     MaxWindows: 1
     Created: 0
   m_saveAssetDialog:
     Icon: {fileID: 21300000, guid: e5a00995c2633e046bcc7a83ad24c42e, type: 3}
     Header: ID_RTEditor_WM_Header_SaveAsset
-    ContentPrefab: {fileID: 1000010003848526, guid: feea27e171ca7bb4ea7567726cac5e3f,
-      type: 3}
+    ContentPrefab: {fileID: 1000010003848526, guid: feea27e171ca7bb4ea7567726cac5e3f, type: 3}
     MaxWindows: 1
     Created: 0
   m_openProjectDialog:
     Icon: {fileID: 21300000, guid: 1d809aa58d8449f44be584087c1a618a, type: 3}
     Header: ID_RTEditor_WM_Header_OpenProject
-    ContentPrefab: {fileID: 1332217457950486, guid: 3f23c6dd4897cb04c99b825c569749e6,
-      type: 3}
+    ContentPrefab: {fileID: 1332217457950486, guid: 3f23c6dd4897cb04c99b825c569749e6, type: 3}
     MaxWindows: 1
     Created: 0
   m_selectAssetLibraryDialog:
     Icon: {fileID: 21300000, guid: ce113772eb0f6574ca2b9651349b34d0, type: 3}
     Header: ID_RTEditor_WM_Header_SelectAssetLibrary
-    ContentPrefab: {fileID: 1332217457950486, guid: bcc2d6c74b36cdc409d1bb5c0fdcf813,
-      type: 3}
+    ContentPrefab: {fileID: 1332217457950486, guid: bcc2d6c74b36cdc409d1bb5c0fdcf813, type: 3}
     MaxWindows: 1
     Created: 0
   m_toolsWindow:
     Icon: {fileID: 0}
     Header: 
-    ContentPrefab: {fileID: 3345052165328761166, guid: 272769975f3467f499fe3fb36ccf0d24,
-      type: 3}
+    ContentPrefab: {fileID: 3345052165328761166, guid: 272769975f3467f499fe3fb36ccf0d24, type: 3}
     MaxWindows: 1
     Created: 0
   m_importAssetsDialog:
     Icon: {fileID: 21300000, guid: ce113772eb0f6574ca2b9651349b34d0, type: 3}
     Header: ID_RTEditor_WM_Header_ImportAssets
-    ContentPrefab: {fileID: 1332217457950486, guid: cd6a994708ac3e0478a75789c8e96fa4,
-      type: 3}
+    ContentPrefab: {fileID: 1332217457950486, guid: cd6a994708ac3e0478a75789c8e96fa4, type: 3}
     MaxWindows: 1
     Created: 0
   m_aboutDialog:
     Icon: {fileID: 0}
     Header: ID_RTEditor_WM_Header_About
-    ContentPrefab: {fileID: 7530601919764163644, guid: 9d381460719e0a94d8ef9a7cdb09d04f,
-      type: 3}
+    ContentPrefab: {fileID: 7530601919764163644, guid: 9d381460719e0a94d8ef9a7cdb09d04f, type: 3}
     MaxWindows: 1
     Created: 0
   m_selectObjectDialog:
     Icon: {fileID: 0}
     Header: ID_RTEditor_WM_Header_SelectObject
-    ContentPrefab: {fileID: 1000013876939806, guid: 59b72cca2803baa4b9b39943ef45defa,
-      type: 3}
+    ContentPrefab: {fileID: 1000013876939806, guid: 59b72cca2803baa4b9b39943ef45defa, type: 3}
     MaxWindows: 1
     Created: 0
   m_selectColorDialog:
     Icon: {fileID: 0}
     Header: ID_RTEditor_WM_Header_SelectColor
-    ContentPrefab: {fileID: 1000012358440838, guid: ebafff3024f81884997bfe6c44bc2e6c,
-      type: 3}
+    ContentPrefab: {fileID: 1000012358440838, guid: ebafff3024f81884997bfe6c44bc2e6c, type: 3}
     MaxWindows: 1
     Created: 0
   m_selectAnimationPropertiesDialog:
     Icon: {fileID: 0}
     Header: ID_RTEditor_WM_Header_SelectAnimationProperties
-    ContentPrefab: {fileID: 1332217457950486, guid: dd47718b55641fc499209a4fc02e99db,
-      type: 3}
+    ContentPrefab: {fileID: 1332217457950486, guid: dd47718b55641fc499209a4fc02e99db, type: 3}
     MaxWindows: 1
     Created: 0
   m_saveFileDialog:
     Icon: {fileID: 0}
     Header: ID_RTEditor_WM_Header_SaveFile
-    ContentPrefab: {fileID: 1000010003848526, guid: 00e98f92cb13cb940bd45f6021b5e973,
-      type: 3}
+    ContentPrefab: {fileID: 1000010003848526, guid: 00e98f92cb13cb940bd45f6021b5e973, type: 3}
     MaxWindows: 1
     Created: 0
   m_openFileDialog:
     Icon: {fileID: 0}
     Header: ID_RTEditor_WM_Header_OpenFile
-    ContentPrefab: {fileID: 1000010003848526, guid: 281baade690d76b4685545e3d858514b,
-      type: 3}
+    ContentPrefab: {fileID: 1000010003848526, guid: 281baade690d76b4685545e3d858514b, type: 3}
     MaxWindows: 1
     Created: 0
   m_customWindows:
@@ -6026,8 +5997,7 @@ MonoBehaviour:
     Descriptor:
       Icon: {fileID: 21300000, guid: 93e198295d49d7348b9328fcfb88d0cb, type: 3}
       Header: ID_RTEditor_WM_Header_ImportFile
-      ContentPrefab: {fileID: 1000010003848526, guid: 24e72d14919037844941c3ffc9aba369,
-        type: 3}
+      ContentPrefab: {fileID: 1000010003848526, guid: 24e72d14919037844941c3ffc9aba369, type: 3}
       MaxWindows: 1
       Created: 0
   - TypeName: settings
@@ -6035,8 +6005,7 @@ MonoBehaviour:
     Descriptor:
       Icon: {fileID: 21300000, guid: 89a4e12e4493f6341928b4e2f80ec665, type: 3}
       Header: ID_RTEditor_WM_Header_Settings
-      ContentPrefab: {fileID: 1332217457950486, guid: ec34abdc89db59e42b4487f79cd8d277,
-        type: 3}
+      ContentPrefab: {fileID: 1332217457950486, guid: ec34abdc89db59e42b4487f79cd8d277, type: 3}
       MaxWindows: 1
       Created: 0
   m_dockPanels: {fileID: 111226606771800033}
@@ -6581,6 +6550,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7770418088276858615
 MonoBehaviour:
   m_ObjectHideFlags: 0
