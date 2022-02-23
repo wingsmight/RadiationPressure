@@ -31,9 +31,9 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     }
 
 
-    public void Throw()
+    public void ThrowForward()
     {
-        Throw(transform.position, transform.forward, startEnergy);
+        Throw(transform.position, Vector3.forward, startEnergy);
     }
     public void Throw(Vector3 startPosition, Vector3 direction, float energy)
     {
@@ -51,11 +51,6 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
 
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, startPosition);
-
-        // TEST
-        lineRenderer.positionCount++;
-        lineRenderer.SetPosition(1, startPosition + direction * 10);
-        // TEST
 
         float remainingLength = maxLength;
 

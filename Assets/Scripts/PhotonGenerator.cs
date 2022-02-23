@@ -6,7 +6,6 @@ using TMPro;
 
 public class PhotonGenerator : MonoBehaviour
 {
-    [SerializeField] [RequireInterface(typeof(IPhoton))] private Object photonPrefab;
     [SerializeField] private ObjectPooler photonPooler;
     [SerializeField] private Transform satellite;
     [Space(12)]
@@ -39,13 +38,10 @@ public class PhotonGenerator : MonoBehaviour
         {
             var pooledPhotonObject = photonPooler.Pull();
             pooledPhotonObject.GameObject.SetActive(true);
-            IPhoton photon = pooledPhotonObject.GameObject.GetComponent<IPhoton>();
+            RaycastReflectionPhoton photon = pooledPhotonObject.GameObject.GetComponent<RaycastReflectionPhoton>();
             photon.Throw(pooledPhotonObject.GameObject.transform.position, transform.forward, startEnergy);
 
             yield return new WaitForEndOfFrame();
         }
     }
-
-
-    private IPhoton Photon => photonPrefab as IPhoton;
 }
