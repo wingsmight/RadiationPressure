@@ -25,7 +25,7 @@ public class SoeAngleSlider : MonoBehaviour
     }
 
 
-    private void SetAngle(float angle)
+    public void SetAngle(float angle)
     {
         sunObjectEarthSystem.PlaceSatellite(angle);
         valueTextView.text = (Mathf.Rad2Deg * angle).ToString() + '°';

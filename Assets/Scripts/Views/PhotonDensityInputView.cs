@@ -8,18 +8,18 @@ public class PhotonDensityInputView : MonoBehaviour
 {
     [SerializeField] private TMP_InputField inputField;
     [Space(12)]
-    [SerializeField] private int defaultValue;
+    [SerializeField] private float defaultValue;
 
 
     private void Awake()
     {
-        Reset();
+        ResetValue();
 
         inputField.onValidateInput += ValidateInput;
     }
 
 
-    public void Reset()
+    public void ResetValue()
     {
         inputField.text = defaultValue.ToString();
         inputField.interactable = true;

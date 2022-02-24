@@ -39,4 +39,20 @@ public static class TransformExt
         }
         return transform;
     }
+    public static void SetAllChildrenActive(this Transform transform, bool value)
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(value);
+        }
+    }
+    public static void SetAllChildrenActiveRecursively(this Transform transform, bool value)
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(value);
+
+            child.SetAllChildrenActiveRecursively(value);
+        }
+    }
 }

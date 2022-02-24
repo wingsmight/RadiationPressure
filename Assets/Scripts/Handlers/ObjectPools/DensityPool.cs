@@ -17,34 +17,36 @@ public class DensityPool : ObjectPooler
     {
         var betweenOffset = this.betweenOffset;
         betweenOffset /= density;
-        float realCubeWidth = 0.0f;
+        Vector3 realCubeWidth = Vector3.one;
 
         this.capacity = 1;
         if (dimension >= 1)
         {
             this.capacity *= (int)((cubeWidth / betweenOffset.x));
-            realCubeWidth = capacity;
+            realCubeWidth = new Vector3(capacity, realCubeWidth.y, realCubeWidth.z);
         }
         if (dimension >= 2)
         {
             this.capacity *= (int)((cubeWidth / betweenOffset.y));
+            realCubeWidth = new Vector3(realCubeWidth.x, realCubeWidth.x, realCubeWidth.z);
         }
         else if (dimension >= 3)
         {
             this.capacity *= (int)((cubeWidth / betweenOffset.z));
+            realCubeWidth = new Vector3(realCubeWidth.x, realCubeWidth.x, realCubeWidth.x);
         }
 
         base.Awake();
 
         Vector3 objectSize = new Vector3(pooledObject.transform.localScale.x, pooledObject.transform.localScale.y, pooledObject.transform.localScale.z);
         objectSize += betweenOffset / 2.0f;
-        Vector3 minPoint = (realCubeWidth / dimension) * new Vector3(objectSize.x, objectSize.y, objectSize.z) * -1;
+        Vector3 minPoint = (realCubeWidth.x / dimension) * new Vector3(objectSize.x, objectSize.y, objectSize.z) * -1;
         int objectIndex = 0;
-        for (int z = 0; z < realCubeWidth; z++)
+        for (int z = 0; z < realCubeWidth.z; z++)
         {
-            for (int y = 0; y < realCubeWidth; y++)
+            for (int y = 0; y < realCubeWidth.y; y++)
             {
-                for (int x = 0; x < realCubeWidth; x++)
+                for (int x = 0; x < realCubeWidth.x; x++)
                 {
                     if (objectIndex < pooledObjects.Count)
                     {

@@ -20,7 +20,7 @@ public class ResetButton : MonoBehaviour
 
     private void OnClick()
     {
-        photonDensityInputView.Reset();
+        photonDensityInputView.ResetValue();
         throwPhotonButton.interactable = true;
     }
 }

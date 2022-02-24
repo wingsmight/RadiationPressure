@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f9993e9e70f4304ae134ff6b15026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxReflectionsCount: 20
+  maxReflectionsCount: 1
   maxLength: 5000
-  startEnergy: 100
+  startEnergy: 1.5
   minEnergy: 1

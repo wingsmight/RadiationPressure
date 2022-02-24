@@ -10,6 +10,9 @@ public class ThrowPhotonsButton : MonoBehaviour
     [SerializeField] private PhotonGenerator photonGenerator;
     [SerializeField] private DensityPool cameraDensityPooler;
     [SerializeField] private PhotonDensityInputView densityInputView;
+    [SerializeField] private StepPressure stepPressure;
+    [SerializeField] private RangeInput anglesInput;
+    [SerializeField] private FloatInput stepInput;
 
 
     private void Awake()
@@ -21,6 +24,7 @@ public class ThrowPhotonsButton : MonoBehaviour
     private void OnClick()
     {
         cameraDensityPooler.Init(densityInputView.Value);
-        photonGenerator.Throw();
+
+        stepPressure.Calculate(anglesInput.StartValue, anglesInput.FinishValue, stepInput.Value);
     }
 }
