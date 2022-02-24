@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class SatelliteSlotView : UIButton
 {
     private const string MODELING_SCENE_NAME = "Modeling";
+
+
     [SerializeField] private TextMeshProUGUI labelTextView;
 
 

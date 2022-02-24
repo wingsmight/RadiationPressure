@@ -33,7 +33,7 @@ namespace Battlehub.RTEditor
         {
             get;
             set;
-        }        
+        }
 
         LayoutInfo CreateLayoutInfo(Transform content, string header, Sprite icon);
         bool ValidateLayout(LayoutInfo layout);
@@ -117,10 +117,6 @@ namespace Battlehub.RTEditor
             bool isDialog;
             wm.CreateWindow(RuntimeWindowType.Scene.ToString(), out sceneWd, out sceneContent, out isDialog);
 
-            WindowDescriptor gameWd;
-            GameObject gameContent;
-            wm.CreateWindow(RuntimeWindowType.Game.ToString(), out gameWd, out gameContent, out isDialog);
-
             WindowDescriptor inspectorWd;
             GameObject inspectorContent;
             wm.CreateWindow(RuntimeWindowType.Inspector.ToString(), out inspectorWd, out inspectorContent, out isDialog);
@@ -137,22 +133,13 @@ namespace Battlehub.RTEditor
             GameObject projectContent;
             wm.CreateWindow(RuntimeWindowType.Project.ToString(), out projectWd, out projectContent, out isDialog);
 
-            WindowDescriptor animationWd;
-            GameObject animationContent;
-            wm.CreateWindow(RuntimeWindowType.Animation.ToString(), out animationWd, out animationContent, out isDialog);
-
             LayoutInfo layout = new LayoutInfo(false,
                 new LayoutInfo(false,
                     new LayoutInfo(true,
                         wm.CreateLayoutInfo(inspectorContent.transform, inspectorWd.Header, inspectorWd.Icon),
                         wm.CreateLayoutInfo(consoleContent.transform, consoleWd.Header, consoleWd.Icon),
                         0.5f),
-                    new LayoutInfo(true,
                         wm.CreateLayoutInfo(sceneContent.transform, sceneWd.Header, sceneWd.Icon),
-                        new LayoutInfo(
-                            wm.CreateLayoutInfo(gameContent.transform, gameWd.Header, gameWd.Icon),
-                            wm.CreateLayoutInfo(animationContent.transform, animationWd.Header, animationWd.Icon)),
-                        0.75f),
                     0.25f),
                 new LayoutInfo(true,
                     wm.CreateLayoutInfo(hierarchyContent.transform, hierarchyWd.Header, hierarchyWd.Icon),
@@ -279,10 +266,10 @@ namespace Battlehub.RTEditor
         private Workspace m_activeWorkspace;
         public Workspace ActiveWorkspace
         {
-            get  { return m_activeWorkspace;  }
+            get { return m_activeWorkspace; }
             set
             {
-                if(m_activeWorkspace != null)
+                if (m_activeWorkspace != null)
                 {
                     m_activeWorkspace.AfterLayout -= OnAfterLayout;
                     m_activeWorkspace.WindowCreated -= OnWindowCreated;
@@ -520,7 +507,7 @@ namespace Battlehub.RTEditor
 
         private void OnAfterLayout(Workspace obj)
         {
-            if(AfterLayout != null)
+            if (AfterLayout != null)
             {
                 AfterLayout(this);
             }
@@ -528,7 +515,7 @@ namespace Battlehub.RTEditor
 
         private void OnWindowCreated(Transform window)
         {
-            if(WindowCreated != null)
+            if (WindowCreated != null)
             {
                 WindowCreated(window);
             }
@@ -536,7 +523,7 @@ namespace Battlehub.RTEditor
 
         private void OnWindowDestroyed(Transform window)
         {
-            if(WindowDestroyed != null)
+            if (WindowDestroyed != null)
             {
                 WindowDestroyed(window);
             }
@@ -572,7 +559,7 @@ namespace Battlehub.RTEditor
                     if (!ActiveWorkspace.IsPointerOverActiveWindow)
                     {
                         ActiveWorkspace.IsPointerOverActiveWindow = true;
-                        
+
                         RuntimeWindow[] windows = Windows;
 
                         for (int i = 0; i < windows.Length; ++i)
@@ -655,7 +642,7 @@ namespace Battlehub.RTEditor
 
         public void OverrideDefaultLayout(Func<IWindowManager, LayoutInfo> buildLayoutCallback, string activateWindowOfType = null)
         {
-            if(ActiveWorkspace == null)
+            if (ActiveWorkspace == null)
             {
                 //QuickFix - will be removed 
                 InitActiveWorkspace_Internal();
@@ -788,7 +775,7 @@ namespace Battlehub.RTEditor
 
         public void SetLayout(Func<IWindowManager, LayoutInfo> buildLayoutCallback, string activateWindowOfType = null)
         {
-            if(ActiveWorkspace == null)
+            if (ActiveWorkspace == null)
             {
                 //QuickFix - will be removed 
                 InitActiveWorkspace_Internal();

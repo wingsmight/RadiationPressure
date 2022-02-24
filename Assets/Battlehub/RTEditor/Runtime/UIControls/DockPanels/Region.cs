@@ -49,7 +49,7 @@ namespace Battlehub.UIControls.DockPanels
             get { return m_canDrag; }
             set
             {
-                if(m_canDrag != value)
+                if (m_canDrag != value)
                 {
                     m_canDrag = value;
                     Tab.CanDrag = value;
@@ -63,7 +63,7 @@ namespace Battlehub.UIControls.DockPanels
             get { return m_canClose; }
             set
             {
-                if(m_canClose != value)
+                if (m_canClose != value)
                 {
                     m_canClose = value;
                     Tab.CanClose = value;
@@ -77,7 +77,7 @@ namespace Battlehub.UIControls.DockPanels
             get { return m_canMaximize; }
             set
             {
-                if(m_canMaximize != value)
+                if (m_canMaximize != value)
                 {
                     m_canMaximize = value;
                     Tab.CanMaximize = value;
@@ -91,7 +91,7 @@ namespace Battlehub.UIControls.DockPanels
             get { return m_isOn; }
             set
             {
-                if(m_isOn != value)
+                if (m_isOn != value)
                 {
                     m_isOn = value;
                     Tab.IsOn = value;
@@ -192,10 +192,10 @@ namespace Battlehub.UIControls.DockPanels
             get { return m_canMaximize; }
             set
             {
-                if(m_canMaximize != value)
+                if (m_canMaximize != value)
                 {
                     m_canMaximize = value;
-                    if(m_maximizeToggle != null)
+                    if (m_maximizeToggle != null)
                     {
                         m_maximizeToggle.gameObject.SetActive(value);
                     }
@@ -437,7 +437,7 @@ namespace Battlehub.UIControls.DockPanels
 
                     parent.CanResize = CanResize;
                     parent.IsHeaderVisible = IsHeaderVisible;
-                    
+
                     parent.RaiseDepthChanged();
 
                     UpdateResizers();
@@ -517,7 +517,7 @@ namespace Battlehub.UIControls.DockPanels
             for (int i = 0; i < regions.Length; ++i)
             {
                 Region region = regions[i];
-                if (region == this) 
+                if (region == this)
                 {
                     continue;
                 }
@@ -947,9 +947,10 @@ namespace Battlehub.UIControls.DockPanels
 
             // Fix for issue https://github.com/Battlehub0x/Unity_RuntimeEditor/issues/7, see details there.
             // One of the tabs got destroyed already, but cleanup of the window is still ongoing
-            if(content.parent.childCount != region.m_tabPanel.transform.childCount) {
+            if (content.parent.childCount != region.m_tabPanel.transform.childCount)
+            {
                 // Always take the previous tab (assumes new window(s) are appended so destroyed window(s) sit(s) at the beginning)
-                index-=1;
+                index -= 1;
             }
 
             return region.m_tabPanel.transform.GetChild(index).GetComponent<Tab>();
@@ -1009,7 +1010,7 @@ namespace Battlehub.UIControls.DockPanels
         {
             RemoveAt(index, true);
         }
-      
+
         private void RemoveAt(int index, bool destroyRegionIfPossible)
         {
             if (index < 0 || m_tabPanel.transform.childCount <= index)
@@ -1057,7 +1058,7 @@ namespace Battlehub.UIControls.DockPanels
 
             m_root.CursorHelper.ResetCursor(this);
         }
-       
+
 
         public void Move(int index, int targetIndex, Region targetRegion, RegionSplitType targetSplitType = RegionSplitType.None)
         {
@@ -1116,7 +1117,7 @@ namespace Battlehub.UIControls.DockPanels
                 {
                     if (childRegion.m_contentPanel.childCount == 0)
                     {
-                        if(!childRegion.m_isDestroyed)
+                        if (!childRegion.m_isDestroyed)
                         {
                             childRegion.MoveChildrenToParentRegion(this);
                         }
@@ -1805,7 +1806,7 @@ namespace Battlehub.UIControls.DockPanels
                 }
             }
 
-            if(children.FirstOrDefault() != null)
+            if (children.FirstOrDefault() != null)
             {
                 m_beginDragRegion.CanMaximize = children.All(t => t.CanMaximize);
             }
