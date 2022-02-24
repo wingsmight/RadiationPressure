@@ -13,12 +13,14 @@ public class CoatingExchangeView : SelectionSettingsView
 
     private void Awake()
     {
+        dropdown.options = coatings.Select(x => new TMP_Dropdown.OptionData(x.Name)).ToList();
+
         fadeAnimation.OnActiveChanged += (isActive) =>
         {
             if (isActive)
             {
                 var currentCoating = raycastSelection.CurrentSelection.GetComponent<Detail>().Coating;
-                int currentCoatingIndex = coatings.FindIndex(x => x.Material.name.Contains(currentCoating.name) || currentCoating.name.Contains(x.Material.name));
+                int currentCoatingIndex = coatings.FindIndex(x => x.Name == currentCoating.Name);
                 dropdown.SetValueWithoutNotify(currentCoatingIndex);
             }
         };

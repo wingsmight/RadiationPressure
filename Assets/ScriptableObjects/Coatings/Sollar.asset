@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe1331d83be64a089c2788997b847ae, type: 3}
   m_Name: Sollar
   m_EditorClassIdentifier: 
+  name: "\u0420\u0430\u0431\u043E\u0447\u0430\u044F \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u044C
+    \u041A\u0410 14\u0424143 No11\u041B  (\u0422\u0415\u0421\u0422\u041E\u0412\u041E\u0415)"
   material: {fileID: 2100000, guid: 88836f59d1953424bb30a78dd47b0294, type: 2}
   coefficients:
     alpha: 0.1

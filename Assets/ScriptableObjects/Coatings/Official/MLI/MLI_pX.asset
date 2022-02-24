@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fe1331d83be64a089c2788997b847ae, type: 3}
-  m_Name: Base
+  m_Name: MLI_pX
   m_EditorClassIdentifier: 
-  name: "\u041F\u043E\u043A\u0440\u044B\u0442\u0438\u0435 \u041A\u0410 NoNo11\u041B,
-    12\u041B, 15\u041B, 16\u041B (\u043F\u0430\u043D\u0435\u043B\u0438 +Y, \xB1Z)
-    (\u0422\u0415\u0421\u0422\u041E\u0412\u041E\u0415)"
-  material: {fileID: 2100000, guid: 0ec8969bb0bd48348953fd97c5f0daeb, type: 2}
+  name: "\u042D\u0412\u0422\u0418 (\u043D\u043E\u043C\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F)
+    \u0441 \u0432\u043D\u0435\u0448\u043D\u0438\u043C \u044D\u043A\u0440\u0430\u043D\u043E\u043C
+    (\u043F\u0430\u043D\u0435\u043B\u044C +\u0425)"
+  material: {fileID: 2100000, guid: 3635547852f7a4026a31c0514552df0f, type: 2}
   coefficients:
     alpha: 0.1
     hi: 0.1

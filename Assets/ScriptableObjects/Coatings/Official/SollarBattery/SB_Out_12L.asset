@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fe1331d83be64a089c2788997b847ae, type: 3}
-  m_Name: Base
+  m_Name: SB_Out_12L
   m_EditorClassIdentifier: 
-  name: "\u041F\u043E\u043A\u0440\u044B\u0442\u0438\u0435 \u041A\u0410 NoNo11\u041B,
-    12\u041B, 15\u041B, 16\u041B (\u043F\u0430\u043D\u0435\u043B\u0438 +Y, \xB1Z)
-    (\u0422\u0415\u0421\u0422\u041E\u0412\u041E\u0415)"
-  material: {fileID: 2100000, guid: 0ec8969bb0bd48348953fd97c5f0daeb, type: 2}
+  name: "\u0420\u0430\u0431\u043E\u0447\u0430\u044F \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u044C
+    \u0411\u0421 \u0434\u043B\u044F \u041A\u0410 14\u0424143 No12\u041B"
+  material: {fileID: 2100000, guid: 88836f59d1953424bb30a78dd47b0294, type: 2}
   coefficients:
     alpha: 0.1
     hi: 0.1

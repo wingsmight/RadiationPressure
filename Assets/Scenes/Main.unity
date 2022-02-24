@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44900614, g: 0.49907047, b: 0.57570964, a: 1}
+  m_IndirectSpecularColor: {r: 0.44900596, g: 0.4990701, b: 0.57570934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.18431373}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4271,7 +4271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: -0.5}
+  m_AnchoredPosition: {x: -7.4999924, y: -0.5}
   m_SizeDelta: {x: -35, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765898528
@@ -4296,8 +4296,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u041A\u043E\u0440\u043F\u0443\u0441"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61866e7a6740b4456ba683ec7b7fa76e, type: 2}
+  m_sharedMaterial: {fileID: 8475070225439744773, guid: 61866e7a6740b4456ba683ec7b7fa76e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4329,7 +4329,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9085,8 +9085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: 210}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 209.5728, y: 201.8883}
+  m_SizeDelta: {x: 239.1456, y: 46.2234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492247159
 MonoBehaviour:
@@ -11921,7 +11921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 22}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1977614065
@@ -11966,6 +11966,20 @@ MonoBehaviour:
   raycastSelection: {fileID: 1029786756}
   dropdown: {fileID: 1492247159}
   coatings:
+  - {fileID: 11400000, guid: b13f07934ed09415db2b712683ee127e, type: 2}
+  - {fileID: 11400000, guid: 89b1a76b3fc8547beb1db5e62771774c, type: 2}
+  - {fileID: 11400000, guid: 87788725caae442adbd703dc792b170f, type: 2}
+  - {fileID: 11400000, guid: 8cb06ea22a5bc40f6ab3975b735bf87e, type: 2}
+  - {fileID: 11400000, guid: 975ddd46525b243b9a298d40c5ae286c, type: 2}
+  - {fileID: 11400000, guid: ad4b20a9de1fb44dd93b9ab358dd52c5, type: 2}
+  - {fileID: 11400000, guid: 30a3da789a1e8448aac40b0081ad6a2c, type: 2}
+  - {fileID: 11400000, guid: f1187b69d33274619b153c14a8474688, type: 2}
+  - {fileID: 11400000, guid: 3fbd5627df924423daaacaa4930e8633, type: 2}
+  - {fileID: 11400000, guid: 40d6a0238fd7d43468e9469e03a8b6fc, type: 2}
+  - {fileID: 11400000, guid: 307503cb582374ae9abe3db0f8e6636d, type: 2}
+  - {fileID: 11400000, guid: 9d0a8c3993f214081acffcc58af1f62b, type: 2}
+  - {fileID: 11400000, guid: 0016f12a1f925473eaea5b60550f3e18, type: 2}
+  - {fileID: 11400000, guid: f408dc10fd6ac4fed9787434c8d8a77c, type: 2}
   - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
   - {fileID: 11400000, guid: 79f9f71a391394e75b4ac0980ef9312b, type: 2}
   - {fileID: 11400000, guid: 60afbfe21ad3942388255b5864c253db, type: 2}

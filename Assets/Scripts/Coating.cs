@@ -6,11 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Сoating0", menuName = "Сoatings/Сoating")]
 public class Coating : ScriptableObject
 {
+    [SerializeField] private new string name;
     [SerializeField] private Material material;
     [SerializeField] private OpticalCoefficients coefficients;
 
 
     //public Material Material => material;
+    public string Name => name;
     public Material Material { get => material; set => material = value; } // TEST
     public OpticalCoefficients Coefficients => coefficients;
 }

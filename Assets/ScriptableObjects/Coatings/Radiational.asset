@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe1331d83be64a089c2788997b847ae, type: 3}
   m_Name: Radiational
   m_EditorClassIdentifier: 
+  name: "\u042D\u0412\u0422\u0418 (\u043D\u043E\u043C\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F)
+    \u0441 \u0432\u043D\u0435\u0448\u043D\u0438\u043C \u044D\u043A\u0440\u0430\u043D\u043E\u043C
+    (\u043F\u0430\u043D\u0435\u043B\u044C -Y)  (\u0422\u0415\u0421\u0422\u041E\u0412\u041E\u0415)"
   material: {fileID: 2100000, guid: 3635547852f7a4026a31c0514552df0f, type: 2}
   coefficients:
     alpha: 0.1

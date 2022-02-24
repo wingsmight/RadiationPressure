@@ -18,7 +18,7 @@ public class RaycastSelection : MonoBehaviour
     }
     private void Update()
     {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray;
         RaycastHit hit;
 
         if (Input.GetMouseButtonDown(0) && !uiDetection.IsUIUnderMouse())
@@ -33,7 +33,7 @@ public class RaycastSelection : MonoBehaviour
                 }
             }
 
-
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
                 var newSelectedTransform = hit.transform;
