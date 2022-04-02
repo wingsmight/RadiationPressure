@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +15,14 @@ public class StepPressure : MonoBehaviour
     [SerializeField] private SatelliteArea satelliteArea;
 
 
-    public void Calculate(float startAngle, float finishAngle, float step)
+    public void Calculate(float startAngle, float finishAngle, float step, bool isShader)
     {
         ClearFile(RESULT_FILE_PATH);
 
-        StartCoroutine(CalculateRoutine(startAngle, finishAngle, step));
+        StartCoroutine(CalculateRoutine(startAngle, finishAngle, step, isShader));
     }
 
-    private IEnumerator CalculateRoutine(float startAngle, float finishAngle, float step)
+    private IEnumerator CalculateRoutine(float startAngle, float finishAngle, float step, bool isShader)
     {
         for (float angle = startAngle; angle <= finishAngle; angle += step)
         {
@@ -29,19 +30,22 @@ public class StepPressure : MonoBehaviour
 
             angleSlider.SetAngle(angle);
 
-            yield return photonGenerator.Throw();
+            DateTime startTime;
+            startTime = System.DateTime.UtcNow;
 
-            //yield return new WaitForSeconds(5.0f);
+            yield return photonGenerator.ThrowRoutine(isShader);
 
             var resultPressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea / 1.0E+13f * RaycastReflectionPhoton.caughtPhtotonCount);
             WriteResults(RESULT_FILE_PATH, angle + ": " + resultPressure.ToString("F13"));
 
             yield return new WaitForEndOfFrame();
 
-            print("Wave at " + angle + "° has calculated successfully!");
+            System.TimeSpan ts = System.DateTime.UtcNow - startTime;
+
+            print($"Wave at {angle}° has calculated successfully for {ts.Seconds}:{ts.Milliseconds}!");
         }
 
-        photonGenerator.Clear();
+        //photonGenerator.Clear();
 
         print("Calculation has ended successfully!");
     }

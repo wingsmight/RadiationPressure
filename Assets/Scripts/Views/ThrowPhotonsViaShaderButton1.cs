@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThrowPhotonsButton : MonoBehaviour
+public class ThrowPhotonsViaShaderButton1 : MonoBehaviour
 {
     [SerializeField] private Button button;
     [Space(12)]
@@ -25,6 +25,6 @@ public class ThrowPhotonsButton : MonoBehaviour
     {
         cameraDensityPooler.Init(densityInputView.Value);
 
-        stepPressure.Calculate(anglesInput.StartValue, anglesInput.FinishValue, stepInput.Value, false);
+        stepPressure.Calculate(anglesInput.StartValue, anglesInput.FinishValue, stepInput.Value, true);
     }
 }

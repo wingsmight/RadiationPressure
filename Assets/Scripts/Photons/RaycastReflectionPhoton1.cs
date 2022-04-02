@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
-public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
+public class RaycastReflectionPhoton1 : MonoBehaviour, IPhoton
 {
     [SerializeField] private int maxReflectionsCount;
     [SerializeField] private float maxLength;
@@ -13,23 +12,13 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     [SerializeField] private bool isMissedPhotonsShowing;
 
 
-    private LineRenderer lineRenderer;
     private ObjectPooler photonPooler;
     private PooledObject pulledPhoton;
 
 
-    public static int caughtPhtotonCount = 0;
-
-
     private void Awake()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        if (lineRenderer == null)
-        {
-            gameObject.AddComponent<LineRenderer>();
-        }
-
-        photonPooler = GameObject.Find("PhotonGenerator").GetComponent<ObjectPooler>();
+        photonPooler = GameObject.Find("TEST_ONLY").GetComponent<ObjectPooler>();
     }
     private void OnEnable()
     {
@@ -60,9 +49,6 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
 
         Ray ray = new Ray(startPosition, direction);
 
-        lineRenderer.positionCount = 1;
-        lineRenderer.SetPosition(0, startPosition);
-
         for (int i = 0; i < maxReflectionsCount; i++)
         {
             if (Physics.Raycast(ray.origin, ray.direction, out var hit))
@@ -70,7 +56,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                 var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
                 if (hitDetail != null)
                 {
-                    caughtPhtotonCount++;
+                    RaycastReflectionPhoton.caughtPhtotonCount++;
 
                     // reduce energy
                     energy /= 2.0f;
@@ -79,21 +65,14 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                     PhotonGenerator.radiatoinForce += Formulas.RadiationForce(hit.normal, ray.direction, hitDetail.Coating.Coefficients);
 
                     // primary ray
-                    lineRenderer.positionCount++;
-                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                     ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
 
-                    yield return new WaitForEndOfFrame();
                     if (energy < minEnergy)
                     {
                         yield break;
                     }
                     else
                     {
-                        yield return new WaitForEndOfFrame();
-                        yield return new WaitForSeconds(0.05f);
-                        yield return new WaitForEndOfFrame();
-
                         // secondary ray
                         float x = Random.Range(-1.0f, 1.0f);
                         float y = Random.Range(-1.0f, 1.0f);
@@ -103,21 +82,11 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                         Vector3 diffuseDirection = perpendicularVector + (hit.normal * zLength);
 
                         pulledPhoton = photonPooler.Pull();
-                        var secondaryPhoton = pulledPhoton.GameObject.GetComponent<RaycastReflectionPhoton>();
+                        var secondaryPhoton = pulledPhoton.GameObject.GetComponent<RaycastReflectionPhoton1>();
                         secondaryPhoton.gameObject.SetActive(true);
                         secondaryPhoton.Throw(hit.point, diffuseDirection, energy);
-
-                        yield return new WaitForEndOfFrame();
                     }
                 }
-            }
-            else if (isMissedPhotonsShowing)
-            {
-                lineRenderer.positionCount++;
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1,
-                    lineRenderer.GetPosition(lineRenderer.positionCount - 1) + ray.direction * maxLength / 2.0f);
-
-                yield break;
             }
         }
     }

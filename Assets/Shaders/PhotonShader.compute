@@ -1,0 +1,36 @@
+#pragma kernel CSMain
+
+struct Photon
+{
+    float3 position;
+    float1 energy;
+};
+
+RWStructuredBuffer<Photon> photons;
+float3 direction;
+float3 vertexA;
+float3 vertexB;
+float3 vertexC;
+float force;
+
+[numthreads(16,16,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float3 position = photons[id.x].position;
+
+    float3 normalVector = normalize(cross(vertexB - vertexA, vertexC - vertexA));
+    float distanceScalar = dot(vertexA - position, normalVector) / dot(direction, normalVector); 
+    float3 intersection = position + distanceScalar * direction; 
+
+    float triangleArea = dot(normalVector, cross(vertexB - vertexA,vertexC - vertexA));
+    float areaIBC = dot(normalVector, cross(vertexB - intersection, vertexC - intersection));
+    float baryA = areaIBC / triangleArea;
+    float areaICA = dot(normalVector, cross(vertexC - intersection, vertexA - intersection));
+    float baryB = areaICA / triangleArea;
+    float baryC = 1 - baryA - baryB;    
+    
+    if(baryA > 0 && baryB > 0 && baryC > 0 && distanceScalar >= 0 && photons[id.x].energy >= 1)
+    {
+        photons[id.x].energy /= photons[id.x].energy;
+    }
+}

@@ -38,7 +38,7 @@ public class DensityPool : ObjectPooler
 
         base.Awake();
 
-        Vector3 objectSize = new Vector3(pooledObject.transform.localScale.x, pooledObject.transform.localScale.y, pooledObject.transform.localScale.z);
+        Vector3 objectSize = pooledObject.transform.localScale;
         objectSize += betweenOffset / 2.0f;
         Vector3 minPoint = (realCubeWidth.x / dimension) * new Vector3(objectSize.x, objectSize.y, objectSize.z) * -1;
         int objectIndex = 0;
@@ -48,7 +48,7 @@ public class DensityPool : ObjectPooler
             {
                 for (int x = 0; x < realCubeWidth.x; x++)
                 {
-                    if (objectIndex < pooledObjects.Count)
+                    if (objectIndex < capacity)
                     {
                         pooledObjects[objectIndex++].GameObject.transform.localPosition = new Vector3(x * objectSize.x, y * objectSize.y, z * objectSize.z) + minPoint;
                     }
@@ -67,4 +67,5 @@ public class DensityPool : ObjectPooler
 
 
     public Vector3 BetweenOffset => betweenOffset;
+    public float Density => density;
 }
