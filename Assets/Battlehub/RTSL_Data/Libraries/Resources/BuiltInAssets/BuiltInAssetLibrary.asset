@@ -18,8 +18,8 @@ MonoBehaviour:
     m_ID: 0
     m_Name: Root
     m_Depth: -1
-    Identity: 680
-    FolderIdentity: 6
+    Identity: 684
+    FolderIdentity: 7
     Folders:
     - m_ID: 0
       m_Name: Root
@@ -193,6 +193,35 @@ MonoBehaviour:
         IsEnabled: 0
         PrefabParts: []
       IsEnabled: 1
+    - m_ID: 6
+      m_Name: Materials
+      m_Depth: 1
+      Assets:
+      - m_ID: 680
+        m_Name: Base
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 0ec8969bb0bd48348953fd97c5f0daeb, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 681
+        m_Name: Handle
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: d57e21ee3cab40b4c9adb463ccafef13, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 682
+        m_Name: RadiationalSurface
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 3635547852f7a4026a31c0514552df0f, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      - m_ID: 683
+        m_Name: SolarCell
+        m_Depth: 0
+        Object: {fileID: 2100000, guid: 88836f59d1953424bb30a78dd47b0294, type: 2}
+        IsEnabled: 0
+        PrefabParts: []
+      IsEnabled: 0
     - m_ID: 4
       m_Name: Prefabs
       m_Depth: 1

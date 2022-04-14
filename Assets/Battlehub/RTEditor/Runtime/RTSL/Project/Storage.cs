@@ -49,7 +49,7 @@ namespace Battlehub.RTSL
         void GetValue(string projectPath, string key, Type type, StorageEventHandler<PersistentObject<TID>> callback);
         void GetValues(string projectPath, string searchPattern, Type type, StorageEventHandler<PersistentObject<TID>[]> callback);
         void SetValue(string projectPath, string key, PersistentObject<TID> persistentObject, StorageEventHandler callback);
-        void DeleteValue(string projectPath, string key, StorageEventHandler callback);   
+        void DeleteValue(string projectPath, string key, StorageEventHandler callback);
     }
 
     public class FileSystemStorage<TID> : IStorage<TID>
@@ -59,7 +59,7 @@ namespace Battlehub.RTSL
         private const string KeyValueStorage = "Values";
         private const string TempFolder = "Temp";
         private const string AssetsRootFolder = "Assets";
-     
+
         public string RootPath
         {
             get;
@@ -552,7 +552,7 @@ namespace Battlehub.RTSL
                         if (!previewOnly)
                         {
                             PersistentObject<TID> persistentObject = persistentObjects[i];
-                          
+
                             File.Delete(path + "/" + assetItem.NameExt);
 
                             if (persistentObject is PersistentRuntimeTextAsset<TID>)
@@ -572,7 +572,7 @@ namespace Battlehub.RTSL
                                     if (RTSLSettings.IsCustomSerializationEnabled && persistentObject is ICustomSerialization)
                                     {
                                         ICustomSerialization customSerialization = (ICustomSerialization)persistentObject;
-                                        if(customSerialization.AllowStandardSerialization)
+                                        if (customSerialization.AllowStandardSerialization)
                                         {
                                             serializer.Serialize(persistentObject, fs);
                                         }
@@ -587,7 +587,7 @@ namespace Battlehub.RTSL
                                     {
                                         serializer.Serialize(persistentObject, fs);
                                         assetItem.CustomDataOffset = fs.Position;
-                                    }   
+                                    }
                                 }
                             }
 
@@ -681,13 +681,13 @@ namespace Battlehub.RTSL
                                 using (FileStream fs = File.OpenRead(assetPath))
                                 {
                                     long customDataOffset = customDataOffsets[i];
-                                    if(customDataOffset == -1)
+                                    if (customDataOffset == -1)
                                     {
                                         result[i] = (PersistentObject<TID>)serializer.Deserialize(fs, types[i]);
                                     }
                                     else
                                     {
-                                        if(customDataOffset > 0)
+                                        if (customDataOffset > 0)
                                         {
                                             result[i] = (PersistentObject<TID>)serializer.Deserialize(fs, types[i], customDataOffset);
                                         }
@@ -696,7 +696,7 @@ namespace Battlehub.RTSL
                                             result[i] = (PersistentObject<TID>)Activator.CreateInstance(types[i]);
                                         }
 
-                                        if(fs.Position < fs.Length)
+                                        if (fs.Position < fs.Length)
                                         {
                                             using (BinaryReader reader = new BinaryReader(fs))
                                             {
@@ -708,7 +708,7 @@ namespace Battlehub.RTSL
                                                 }
                                             }
                                         }
-                                     
+
                                     }
                                 }
                             }
