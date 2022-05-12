@@ -9,32 +9,35 @@ public class PrefabRuntime : MonoBehaviour
     [SerializeField] private GameObject savedObject;
 
 
-    private void Update()
+    public static void CreatePrefab()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        var gameObjects = new GameObject[10];
+        for (int i = 0; i < gameObjects.Length; i++)
         {
-            CreatePrefab(savedObject);
+            gameObjects[i] = GameObject.Find("Satellite" + i);
         }
-    }
 
+        foreach (var gameObject in gameObjects)
+        {
+            if (gameObject != null)
+            {
+                // Create folder Prefabs and set the path as within the Prefabs folder,
+                // and name it as the GameObject's name with the .Prefab format
+                var rootPath = "Assets/Resources/Satellites/";
+                string localPath = rootPath + gameObject.name + ".prefab";
+                ResourceModelLoading.lastSatelliteName = gameObject.name;
 
-    public static void CreatePrefab(GameObject gameObject)
-    {
-        // Create folder Prefabs and set the path as within the Prefabs folder,
-        // and name it as the GameObject's name with the .Prefab format
-        if (!Directory.Exists("Assets/Prefabs"))
-            AssetDatabase.CreateFolder("Assets", "Prefabs");
-        string localPath = "Assets/Prefabs/" + gameObject.name + ".prefab";
+                // Make sure the file name is unique, in case an existing Prefab has the same name.
+                localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
 
-        // Make sure the file name is unique, in case an existing Prefab has the same name.
-        localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
-
-        // Create the new Prefab and log whether Prefab was saved successfully.
-        bool prefabSuccess;
-        PrefabUtility.SaveAsPrefabAssetAndConnect(gameObject, localPath, InteractionMode.UserAction, out prefabSuccess);
-        if (prefabSuccess == true)
-            Debug.Log("Prefab was saved successfully");
-        else
-            Debug.Log("Prefab failed to save" + prefabSuccess);
+                // Create the new Prefab and log whether Prefab was saved successfully.
+                bool prefabSuccess;
+                PrefabUtility.SaveAsPrefabAssetAndConnect(gameObject, localPath, InteractionMode.UserAction, out prefabSuccess);
+                if (prefabSuccess == true)
+                    Debug.Log("Prefab was saved successfully");
+                else
+                    Debug.Log("Prefab failed to save" + prefabSuccess);
+            }
+        }
     }
 }

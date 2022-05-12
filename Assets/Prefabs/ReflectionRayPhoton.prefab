@@ -148,3 +148,4 @@ MonoBehaviour:
   startEnergy: 100
   minEnergy: 1
   isMissedPhotonsShowing: 0
+  testCoating: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}

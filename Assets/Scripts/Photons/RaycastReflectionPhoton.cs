@@ -11,6 +11,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     [SerializeField] private float startEnergy;
     [SerializeField] private float minEnergy;
     [SerializeField] private bool isMissedPhotonsShowing;
+    [Space]
+    [SerializeField] private Coating testCoating;
 
 
     private LineRenderer lineRenderer;
@@ -67,7 +69,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
         {
             if (Physics.Raycast(ray.origin, ray.direction, out var hit))
             {
-                var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
+                //var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
+                var hitDetail = hit.transform.gameObject.GetComponent<Collider>();
                 if (hitDetail != null)
                 {
                     caughtPhtotonCount++;
@@ -76,7 +79,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                     energy /= 2.0f;
 
                     // calculate the force
-                    PhotonGenerator.radiatoinForce += Formulas.RadiationForce(hit.normal, ray.direction, hitDetail.Coating.Coefficients);
+                    PhotonGenerator.radiatoinForce += Formulas.RadiationForce(hit.normal, ray.direction, testCoating.Coefficients);
 
                     // primary ray
                     lineRenderer.positionCount++;
