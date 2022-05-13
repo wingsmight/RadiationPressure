@@ -10,13 +10,11 @@ public class SunObjectEarthSystem : MonoBehaviour
 
 
     private float satelliteSunDistance;
-    private float satelliteEarthDistance;
 
 
     private void Awake()
     {
         satelliteSunDistance = Vector3.Distance(satellite.transform.position, sun.transform.position);
-        satelliteEarthDistance = Vector3.Distance(satellite.transform.position, earth.transform.position);
     }
     private void FixedUpdate()
     {
@@ -24,13 +22,6 @@ public class SunObjectEarthSystem : MonoBehaviour
         sun.transform.LookAt(satellite.transform);
     }
 
-
-    public void PlaceSatellite(float satelliteEarthAngle)
-    {
-        satellite.transform.position = new Vector3(earth.transform.position.x + satelliteEarthDistance * Mathf.Cos(satelliteEarthAngle),
-                                                    earth.transform.position.y + satelliteEarthDistance * Mathf.Sin(satelliteEarthAngle),
-                                                    satellite.transform.position.z);
-    }
 
     private void RotateSatellite()
     {

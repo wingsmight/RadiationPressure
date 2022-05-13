@@ -7,7 +7,7 @@ using TMPro;
 public class SoeAngleSlider : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    [SerializeField] private SunObjectEarthSystem sunObjectEarthSystem;
+    [SerializeField] private Orbit orbit;
     [SerializeField] private TextMeshProUGUI valueTextView;
 
 
@@ -27,7 +27,7 @@ public class SoeAngleSlider : MonoBehaviour
 
     public void SetAngle(float angle)
     {
-        sunObjectEarthSystem.PlaceSatellite(angle);
+        orbit.PlaceSatellite(angle);
         valueTextView.text = (Mathf.Rad2Deg * angle).ToString() + '°';
     }
 }
