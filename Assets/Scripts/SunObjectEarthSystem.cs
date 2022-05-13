@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SunObjectEarthSystem : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> suns;
+    [SerializeField] private GameObject sun;
     [SerializeField] private GameObject satellite;
     [SerializeField] private GameObject earth;
 
@@ -15,13 +15,13 @@ public class SunObjectEarthSystem : MonoBehaviour
 
     private void Awake()
     {
-        satelliteSunDistance = Vector3.Distance(satellite.transform.position, suns[0].transform.position);
+        satelliteSunDistance = Vector3.Distance(satellite.transform.position, sun.transform.position);
         satelliteEarthDistance = Vector3.Distance(satellite.transform.position, earth.transform.position);
     }
     private void FixedUpdate()
     {
         RotateSatellite();
-        suns.ForEach(x => x.transform.LookAt(satellite.transform));
+        sun.transform.LookAt(satellite.transform);
     }
 
 
@@ -34,7 +34,22 @@ public class SunObjectEarthSystem : MonoBehaviour
 
     private void RotateSatellite()
     {
-        satellite.transform.LookAt(suns[0].transform);
+        satellite.transform.LookAt(sun.transform);
         satellite.transform.localEulerAngles += new Vector3(90, 0, 0);
+    }
+
+
+    public GameObject Satellite
+    {
+        get
+        {
+            return satellite;
+        }
+        set
+        {
+            satellite = value;
+
+            Awake();
+        }
     }
 }

@@ -7,8 +7,6 @@ using TMPro;
 public class PhotonGenerator : MonoBehaviour
 {
     [SerializeField] private ObjectPooler photonPooler;
-    [SerializeField] private ObjectPooler shaderPhotonPooler;
-    [SerializeField] private Transform satellite;
     [Space(12)]
     [SerializeField] private float startEnergy;
     [SerializeField] private PooledObject[] pooledPhotonObjects = new PooledObject[0];
@@ -22,46 +20,34 @@ public class PhotonGenerator : MonoBehaviour
         radiatoinForce = Vector3.zero;
         RaycastReflectionPhoton.caughtPhtotonCount = 0;
 
-        var photonPooler = isShader ? this.shaderPhotonPooler : this.photonPooler;
-
         pooledPhotonObjects = new PooledObject[photonPooler.Capacity];
         var primaryPhotonCount = photonPooler.Capacity;
 
         int i = 0;
-        if (isShader)
-        {
-            if ((shaderPhotonPooler as DensityPool).Density * 10.0f >= 2.9f)
-            {
-                i = 800;
-                primaryPhotonCount = 1150;
-            }
-            else if ((shaderPhotonPooler as DensityPool).Density * 10.0f >= 1.9f)
-            {
-                i = 380;
-                primaryPhotonCount = 510;
-            }
+        // if ((photonPooler as DensityPool).Density * 10.0f >= 2.9f)
+        // {
+        //     i = 800;
+        //     primaryPhotonCount = 1150;
+        // }
+        // else if ((photonPooler as DensityPool).Density * 10.0f >= 1.9f)
+        // {
+        //     i = 380;
+        //     primaryPhotonCount = 510;
+        // }
 
-            for (int j = 0; j < i; j++)
-            {
-                var pooledPhotonObject = photonPooler.Pull();
-            }
-        }
+        // for (int j = 0; j < i; j++)
+        // {
+        //     var pooledPhotonObject = photonPooler.Pull();
+        // }
 
         for (; i < primaryPhotonCount; i++)
         {
             var pooledPhotonObject = photonPooler.Pull();
             pooledPhotonObjects[i] = pooledPhotonObject;
             pooledPhotonObject.GameObject.SetActive(true);
-            if (isShader)
-            {
-                RaycastReflectionPhoton1 photon = pooledPhotonObject.GameObject.GetComponent<RaycastReflectionPhoton1>();
-                photon.Throw(pooledPhotonObject.GameObject.transform.position, transform.forward, startEnergy);
-            }
-            else
-            {
-                RaycastReflectionPhoton photon = pooledPhotonObject.GameObject.GetComponent<RaycastReflectionPhoton>();
-                photon.Throw(pooledPhotonObject.GameObject.transform.position, transform.forward, startEnergy);
-            }
+
+            RaycastReflectionPhoton photon = pooledPhotonObject.GameObject.GetComponent<RaycastReflectionPhoton>();
+            photon.Throw(pooledPhotonObject.GameObject.transform.position, transform.forward, startEnergy);
 
             yield return new WaitForEndOfFrame();
         }

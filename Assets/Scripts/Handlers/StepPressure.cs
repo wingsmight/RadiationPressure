@@ -30,22 +30,15 @@ public class StepPressure : MonoBehaviour
 
             angleSlider.SetAngle(angle);
 
-            DateTime startTime;
-            startTime = System.DateTime.UtcNow;
-
             yield return photonGenerator.ThrowRoutine(isShader);
 
             var resultPressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea / 1.0E+13f * RaycastReflectionPhoton.caughtPhtotonCount);
             WriteResults(RESULT_FILE_PATH, angle + ": " + resultPressure.ToString("F13"));
 
             yield return new WaitForEndOfFrame();
-
-            System.TimeSpan ts = System.DateTime.UtcNow - startTime;
-
-            print($"Wave at {angle}° has calculated successfully for {ts.Seconds}:{ts.Milliseconds}!");
         }
 
-        //photonGenerator.Clear();
+        photonGenerator.Clear();
 
         print("Calculation has ended successfully!");
     }

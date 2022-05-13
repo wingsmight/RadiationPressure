@@ -70,7 +70,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
             if (Physics.Raycast(ray.origin, ray.direction, out var hit))
             {
                 //var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
-                var hitDetail = hit.transform.gameObject.GetComponent<Collider>();
+                //var hitDetail = hit.transform.gameObject.GetComponent<Collider>();
+                var hitDetail = hit.transform.gameObject.GetComponentInChildren<Detail>();
                 if (hitDetail != null)
                 {
                     caughtPhtotonCount++;
@@ -93,10 +94,6 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                     }
                     else
                     {
-                        yield return new WaitForEndOfFrame();
-                        yield return new WaitForSeconds(0.05f);
-                        yield return new WaitForEndOfFrame();
-
                         // secondary ray
                         float x = Random.Range(-1.0f, 1.0f);
                         float y = Random.Range(-1.0f, 1.0f);

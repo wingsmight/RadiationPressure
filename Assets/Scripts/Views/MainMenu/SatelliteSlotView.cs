@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SatelliteSlotView : UIButton
 {
     private const string MODELING_SCENE_NAME = "Modeling";
+    private const string CALCULATION_SCENE_NAME = "Calculation";
 
 
     [SerializeField] private TextMeshProUGUI labelTextView;
@@ -24,6 +26,14 @@ public class SatelliteSlotView : UIButton
 
     protected override void OnClick()
     {
-        SceneManager.LoadScene(MODELING_SCENE_NAME);
+        if (labelTextView.text.Any(char.IsDigit))
+        {
+            ResourceModelLoading.lastSatelliteName = labelTextView.text;
+            SceneManager.LoadScene(CALCULATION_SCENE_NAME);
+        }
+        else
+        {
+            SceneManager.LoadScene(MODELING_SCENE_NAME);
+        }
     }
 }

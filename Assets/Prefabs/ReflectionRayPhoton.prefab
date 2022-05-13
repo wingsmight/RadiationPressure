@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f9993e9e70f4304ae134ff6b15026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxReflectionsCount: 10
-  maxLength: 5000
+  maxReflectionsCount: 3
+  maxLength: 1000
   startEnergy: 100
-  minEnergy: 1
+  minEnergy: 30
   isMissedPhotonsShowing: 0
   testCoating: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
