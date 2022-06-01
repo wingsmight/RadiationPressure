@@ -18,13 +18,13 @@ namespace Battlehub.RTEditor
         [SerializeField]
         private Material m_defaultMaterial = null;
 
-     
+
         private void Awake()
         {
             m_editor = IOC.Resolve<IRuntimeEditor>();
             m_localization = IOC.Resolve<ILocalization>();
 
-            if(RenderPipelineInfo.Type != RPType.Standard)
+            if (RenderPipelineInfo.Type != RPType.Standard)
             {
                 m_defaultMaterial = RenderPipelineInfo.DefaultMaterial;
             }
@@ -52,28 +52,13 @@ namespace Battlehub.RTEditor
                     go.transform.SetParent(selection.activeTransform, false);
                     break;
                 case "cube":
-                    go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    go.GetComponent<Renderer>().sharedMaterial = m_defaultMaterial;
-                    break;
-                case "sphere":
-                    go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    go.GetComponent<Renderer>().sharedMaterial = m_defaultMaterial;
-                    break;
-                case "capsule":
-                    go = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-                    go.GetComponent<Renderer>().sharedMaterial = m_defaultMaterial;
+                    go = DetailLoading.Load(cmd);
                     break;
                 case "cylinder":
-                    go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                    go.GetComponent<Renderer>().sharedMaterial = m_defaultMaterial;
+                    go = DetailLoading.Load(cmd);
                     break;
-                case "plane":
-                    go = GameObject.CreatePrimitive(PrimitiveType.Plane);
-                    go.GetComponent<Renderer>().sharedMaterial = m_defaultMaterial;
-                    break;
-                case "quad":
-                    go = GameObject.CreatePrimitive(PrimitiveType.Quad);
-                    go.GetComponent<Renderer>().sharedMaterial = m_defaultMaterial;
+                case "prism":
+                    go = DetailLoading.Load(cmd);
                     break;
                 case "directionallight":
                     {
@@ -110,13 +95,26 @@ namespace Battlehub.RTEditor
                     break;
             }
 
-            if(go != null)
+            if (go != null)
             {
                 m_editor.AddGameObjectToScene(go);
             }
-            
+
+        }
+    }
+
+    public static class DetailLoading
+    {
+        private const string PATH = "Details";
+
+
+        public static GameObject Load(string name)
+        {
+            var detial = Resources.Load<GameObject>($"{PATH}/{name}");
+            GameObject detailObject = GameObject.Instantiate(detial);
+            detailObject.name = name;
+
+            return detailObject;
         }
     }
 }
-
-

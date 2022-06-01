@@ -130,6 +130,230 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[2].Path
+      value: 3D Object/Prism
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[2].Text
+      value: "\u041F\u0440\u0438\u0437\u043C\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[3].Path
+      value: 3D Object/Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[3].Text
+      value: "\u041A\u0443\u0431"
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[4].Path
+      value: 3D Object/Cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[4].Text
+      value: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[5].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[5].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[6].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[6].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[7].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[7].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[8].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[8].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[9].Path
+      value: 3D Object/Cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[9].Text
+      value: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[10].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[10].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[11].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[11].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Path
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Text
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[2].Command
+      value: Prism
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[3].Command
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[4].Command
+      value: Cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[5].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[6].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[7].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[8].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[9].Command
+      value: Cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[10].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[11].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Command
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].IsVisible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Action.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Validate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451481778}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Validate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451481778}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CmdGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Validate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Validate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CmdGameObjectValidate
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[2].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[3].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[4].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[5].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[6].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[7].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[8].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[9].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[10].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[11].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 109295648347768002, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+      propertyPath: m_items.Array.data[12].Validate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 220210396116727283, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -564,6 +788,17 @@ PrefabInstance:
       objectReference: {fileID: 1588239376}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+--- !u!114 &451481778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5849259614496068626, guid: ccb1c342d6e97ea41b81b385fbb955b8, type: 3}
+  m_PrefabInstance: {fileID: 451481777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21371d036bda9424ca706afd5d239902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1588239375
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,12 @@ public class CoatingExchangeView : SelectionSettingsView
             if (isActive)
             {
                 var currentCoating = raycastSelection.CurrentSelection.GetComponent<Detail>().Coating;
-                int currentCoatingIndex = coatings.FindIndex(x => x.Name == currentCoating.Name);
+                int currentCoatingIndex = 0;
+                if (currentCoating != null)
+                {
+                    currentCoatingIndex = coatings.FindIndex(x => x.Name == currentCoating.Name);
+                }
+
                 dropdown.SetValueWithoutNotify(currentCoatingIndex);
             }
         };

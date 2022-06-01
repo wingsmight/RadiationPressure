@@ -10,7 +10,8 @@ public class ModelSaving : MonoBehaviour
 
     public void Save()
     {
-        var savedObject = transform.root.GetLastChild().gameObject;
+        var activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        var savedObject = activeScene.GetRootGameObjects()[activeScene.rootCount - 1];
 
         if (IsModelExisted(savedObject))
         {

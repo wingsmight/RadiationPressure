@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b3dcbba42b0478bafacb5bf4448809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coating: {fileID: 0}
+  coating: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
   meshRenderer: {fileID: 6288382124725391687}
   coatings:
   - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coating: {fileID: 0}
+  coating: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
   meshRenderer: {fileID: 6391246329161005923}
   coatings:
   - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc821f55128564cdc9c9e8e5d904ce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coating: {fileID: 0}
+  coating: {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
   meshRenderer: {fileID: 6239362086497881890}
   coatings:
   - {fileID: 11400000, guid: b6472923511d54064b5c03b802b16f10, type: 2}
