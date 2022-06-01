@@ -104,19 +104,19 @@
 		<StringResource id="ID_RTEditor_CD_BoxCollider" value="Box Collider"/>
 		<StringResource id="ID_RTEditor_CD_BoxCollider_IsTrigger" value="Is Trigger"/>
 		<StringResource id="ID_RTEditor_CD_BoxCollider_Material" value="Материал"/>
-		<StringResource id="ID_RTEditor_CD_BoxCollider_Center" value="Center"/>
-		<StringResource id="ID_RTEditor_CD_BoxCollider_Size" value="Size"/>
+		<StringResource id="ID_RTEditor_CD_BoxCollider_Center" value="Центр"/>
+		<StringResource id="ID_RTEditor_CD_BoxCollider_Size" value="Размер"/>
 	
 		<StringResource id="ID_RTEditor_CD_Camera" value="Camera"/>
 		<StringResource id="ID_RTEditor_CD_Camera_Projection" value="Projection"/>
 		<StringResource id="ID_RTEditor_CD_Camera_Fov" value="Field Of View"/>
-		<StringResource id="ID_RTEditor_CD_Camera_Size" value="Size"/>
+		<StringResource id="ID_RTEditor_CD_Camera_Size" value="Размер"/>
     <StringResource id="ID_RTEditor_CD_Camera_CullingMask" value="Culling Mask"/>
 		
 		<StringResource id="ID_RTEditor_CD_CapsuleCollider" value="Capsule Collider"/>
 		<StringResource id="ID_RTEditor_CD_CapsuleCollider_IsTrigger" value="Is Trigger"/>
 		<StringResource id="ID_RTEditor_CD_CapsuleCollider_Material" value="Материал"/>
-		<StringResource id="ID_RTEditor_CD_CapsuleCollider_Center" value="Center"/>
+		<StringResource id="ID_RTEditor_CD_CapsuleCollider_Center" value="Центр"/>
 		<StringResource id="ID_RTEditor_CD_CapsuleCollider_Radius" value="Radius"/>
 		<StringResource id="ID_RTEditor_CD_CapsuleCollider_Height" value="Height"/>
 		<StringResource id="ID_RTEditor_CD_CapsuleCollider_Direction" value="Direction"/>
@@ -203,7 +203,7 @@
 		<StringResource id="ID_RTEditor_CD_RectTransform_Rotation" value="Rotation"/>
 		<StringResource id="ID_RTEditor_CD_RectTransform_Scale" value="Scale"/>
     <StringResource id="ID_RTEditor_AnchorPreset_Left" value="left"/>
-    <StringResource id="ID_RTEditor_AnchorPreset_Center" value="center"/>
+    <StringResource id="ID_RTEditor_AnchorPreset_Center" value="Центр"/>
     <StringResource id="ID_RTEditor_AnchorPreset_Right" value="right"/>
     <StringResource id="ID_RTEditor_AnchorPreset_Top" value="top"/>
     <StringResource id="ID_RTEditor_AnchorPreset_Middle" value="middle"/>
@@ -245,7 +245,7 @@
 		<StringResource id="ID_RTEditor_CD_SphereCollider" value="Sphere Collider"/>
 		<StringResource id="ID_RTEditor_CD_SphereCollider_IsTrigger" value="Is Trigger"/>
 		<StringResource id="ID_RTEditor_CD_SphereCollider_Material" value="Материал"/>
-		<StringResource id="ID_RTEditor_CD_SphereCollider_Center" value="Center"/>
+		<StringResource id="ID_RTEditor_CD_SphereCollider_Center" value="Центр"/>
 		<StringResource id="ID_RTEditor_CD_SphereCollider_Radius" value="Radius"/>
 		
 		<StringResource id="ID_RTEditor_CD_SpringJoint" value="Spring Joint"/>
@@ -284,10 +284,10 @@
 		<StringResource id="ID_RTEditor_CD_StandardMaterial_Tiling" value="Tiling"/>
 		<StringResource id="ID_RTEditor_CD_StandardMaterial_Offset" value="Offset"/>
 		
-		<StringResource id="ID_RTEditor_CD_Transform" value="Transform"/>
-		<StringResource id="ID_RTEditor_CD_Transform_Position" value="Position"/>
-		<StringResource id="ID_RTEditor_CD_Transform_Rotation" value="Rotation"/>
-		<StringResource id="ID_RTEditor_CD_Transform_Scale" value="Scale"/>
+		<StringResource id="ID_RTEditor_CD_Transform" value="Трансформация"/>
+		<StringResource id="ID_RTEditor_CD_Transform_Position" value="Позиция"/>
+		<StringResource id="ID_RTEditor_CD_Transform_Rotation" value="Поворот"/>
+		<StringResource id="ID_RTEditor_CD_Transform_Scale" value="Размер"/>
 		
 		<StringResource id="ID_RTEditor_CD_Terrain" value="Terrain"/>
     
@@ -295,7 +295,7 @@
     <StringResource id="ID_RTEditor_GOE_Layer" value="Layer"/>
     
 		<!-- Property Editors -->
-		<StringResource id="ID_RTEditor_PE_ArrayEditor_Size" value="Size"/>
+		<StringResource id="ID_RTEditor_PE_ArrayEditor_Size" value="Размер"/>
 		<StringResource id="ID_RTEditor_PE_ObjectEditor_None" value="None"/>
 		<StringResource id="ID_RTEditor_PE_ObjectEditor_Select" value="Выбрать"/>
 		<StringResource id="ID_RTEditor_PE_ColorEditor_Select" value="Выбрать"/>
@@ -308,7 +308,7 @@
 		<StringResource id="ID_RTEditor_PE_TypeName_Component" value="Компонент"/>
 		<StringResource id="ID_RTEditor_PE_TypeName_Color" value="Цвет"/>
 		
-		<StringResource id="ID_RTEditor_PE_BoundsEditor_Center" value="Center"/>
+		<StringResource id="ID_RTEditor_PE_BoundsEditor_Center" value="Центр"/>
 		<StringResource id="ID_RTEditor_PE_BoundsEditor_Extents" value="Extents"/>
 		
 		<!-- AddComponentControl -->
