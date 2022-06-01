@@ -7,18 +7,12 @@ public class Detail : MonoBehaviour
 {
     [SerializeField] protected Coating coating;
     [SerializeField] protected MeshRenderer meshRenderer;
-    // TEST
-    [SerializeField] private List<Coating> coatings;
-    // TEST
 
 
-    // TEST
-    private void Awake()
+    private void OnEnable()
     {
-        coating = coatings.FirstOrDefault(x => x.Material.name == meshRenderer.material.name);
-        //coating.Material = meshRenderer.material;
+        Coating = coating;
     }
-    // TEST
 
 
     public virtual float Area
@@ -29,14 +23,7 @@ public class Detail : MonoBehaviour
     {
         get
         {
-            if (coating != null)
-            {
-                return coating;
-            }
-            else
-            {
-                return coatings.FirstOrDefault(x => x.Material.name == meshRenderer.material.name);
-            }
+            return coating;
         }
         set
         {
@@ -44,5 +31,4 @@ public class Detail : MonoBehaviour
             meshRenderer.material = coating.Material;
         }
     }
-    public MeshRenderer MeshRenderer { get => meshRenderer; set => meshRenderer = value; }
 }

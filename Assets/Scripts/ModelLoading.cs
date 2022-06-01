@@ -30,7 +30,11 @@ public class ModelLoading : MonoBehaviour
                 loadedeSatellite.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             }
 
-            sunObjectEarthSystem.Satellite = model;
+            //TODO
+            if (sunObjectEarthSystem != null)
+            {
+                sunObjectEarthSystem.Satellite = model;
+            }
         }
     }
 }

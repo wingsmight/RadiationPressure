@@ -25,12 +25,7 @@ public class RaycastSelection : MonoBehaviour
         {
             if (selectedTransform != null)
             {
-                var selectionRenderer = selectedTransform.GetComponent<Renderer>();
-                if (selectionRenderer != null)
-                {
-                    selectionRenderer.materials = new Material[1] { selectionRenderer.material };
-                    selectedTransform = null;
-                }
+                Reset();
             }
 
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -50,6 +45,17 @@ public class RaycastSelection : MonoBehaviour
                     selectedTransform = newSelectedTransform;
                 }
             }
+        }
+    }
+
+
+    public void Reset()
+    {
+        var selectionRenderer = selectedTransform.GetComponent<Renderer>();
+        if (selectionRenderer != null)
+        {
+            selectionRenderer.materials = new Material[1] { selectionRenderer.material };
+            selectedTransform = null;
         }
     }
 

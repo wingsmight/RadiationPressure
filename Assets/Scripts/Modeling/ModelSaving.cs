@@ -5,10 +5,10 @@ using UnityEditor;
 
 public class ModelSaving : MonoBehaviour
 {
-    private const string PATH = "Assets/Resources/Satellites/";
+    protected const string PATH = "Assets/Resources/Satellites/";
 
 
-    public void Save()
+    public virtual void Save()
     {
         var activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         var savedObject = activeScene.GetRootGameObjects()[activeScene.rootCount - 1];
@@ -19,7 +19,7 @@ public class ModelSaving : MonoBehaviour
         }
     }
 
-    private void SaveToPrefab(GameObject savedObject, string path)
+    protected void SaveToPrefab(GameObject savedObject, string path)
     {
         if (savedObject != null)
         {
@@ -29,7 +29,7 @@ public class ModelSaving : MonoBehaviour
             ModelLoading.lastSatelliteName = savedObject.name;
 
             // Make sure the file name is unique, in case an existing Prefab has the same name.
-            localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
+            //localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
 
             // Create the new Prefab and log whether Prefab was saved successfully.
             bool prefabSuccess;
@@ -40,7 +40,7 @@ public class ModelSaving : MonoBehaviour
                 Debug.Log("Prefab failed to save" + prefabSuccess);
         }
     }
-    private bool IsModelExisted(GameObject model)
+    protected bool IsModelExisted(GameObject model)
     {
         return model != gameObject;
     }

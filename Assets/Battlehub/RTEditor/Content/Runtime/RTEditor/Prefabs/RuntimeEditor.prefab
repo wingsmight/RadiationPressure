@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u0438\u0441\u0442\u0443\u043F\u0438\u0442\u044C \u043A \u0440\u0430\u0441\u0447\u0435\u0442\u0430\u043C"
+  m_text: "\u041D\u0430\u043D\u0435\u0441\u0442\u0438 \u043F\u043E\u043A\u0440\u044B\u0442\u0438\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2286805fa7fe47f9afdba30082ff933, type: 2}
   m_sharedMaterial: {fileID: -1026918397033091806, guid: f2286805fa7fe47f9afdba30082ff933, type: 2}
@@ -450,9 +450,9 @@ GameObject:
   - component: {fileID: 1761577032}
   - component: {fileID: 1761577031}
   - component: {fileID: 1761577030}
-  - component: {fileID: 9132143504426705744}
+  - component: {fileID: 7602536064887380569}
   m_Layer: 5
-  m_Name: TestModelButton
+  m_Name: CoatModelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &9132143504426705744
+--- !u!114 &7602536064887380569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,11 +569,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1761577027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f11fd1255350746aef2a5643924fd0, type: 3}
+  m_Script: {fileID: 11500000, guid: 12c27d5461e272a4eb9afb4cba3c94f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasSound: 0
-  sceneName: Calculation
+  sceneName: Coating
   modelSave: {fileID: 0}
 --- !u!1 &6005130086743319
 GameObject:
@@ -1146,8 +1146,44 @@ MonoBehaviour:
           m_CallState: 2
     IsVisible: 1
     IsOn: 0
+  - Path: 3D Object/Prism
+    Text: "\u041F\u0440\u0438\u0437\u043C\u0430"
+    Icon: {fileID: 0}
+    Command: Prism
+    Action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5849259614496068626}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: CmdGameObject
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Camera
+            m_BoolArgument: 0
+          m_CallState: 2
+    Validate:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5849259614496068626}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: CmdGameObjectValidate
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    IsVisible: 1
+    IsOn: 0
   - Path: 3D Object/Cube
-    Text: Cube
+    Text: "\u041A\u0443\u0431"
     Icon: {fileID: 0}
     Command: Cube
     Action:
@@ -1162,79 +1198,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Cube
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: 3D Object/Sphere
-    Text: Sphere
-    Icon: {fileID: 0}
-    Command: Sphere
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Sphere
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: 3D Object/Capsule
-    Text: Capsule
-    Icon: {fileID: 0}
-    Command: Capsule
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Capsule
+            m_StringArgument: Camera
             m_BoolArgument: 0
           m_CallState: 2
     Validate:
@@ -1255,225 +1219,9 @@ MonoBehaviour:
     IsVisible: 1
     IsOn: 0
   - Path: 3D Object/Cylinder
-    Text: Cylinder
+    Text: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
     Icon: {fileID: 0}
     Command: Cylinder
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Cylinder
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: 3D Object/Plane
-    Text: Plane
-    Icon: {fileID: 0}
-    Command: Plane
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Plane
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: 3D Object/Quad
-    Text: Quad
-    Icon: {fileID: 0}
-    Command: Quad
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Quad
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: Light/Directional
-    Text: Directional
-    Icon: {fileID: 0}
-    Command: DirectionalLight
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: DirectionalLight
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: Light/Point
-    Text: Point
-    Icon: {fileID: 0}
-    Command: PointLight
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: PointLight
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: Light/Spot
-    Text: Spot
-    Icon: {fileID: 0}
-    Command: SpotLight
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObject
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: SpotLight
-            m_BoolArgument: 0
-          m_CallState: 2
-    Validate:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5849259614496068626}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: CmdGameObjectValidate
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    IsVisible: 1
-    IsOn: 0
-  - Path: Camera
-    Text: Camera
-    Icon: {fileID: 0}
-    Command: Camera
     Action:
       m_PersistentCalls:
         m_Calls:
