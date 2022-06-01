@@ -121,17 +121,15 @@ namespace Battlehub.RTEditor
             GameObject inspectorContent;
             wm.CreateWindow(RuntimeWindowType.Inspector.ToString(), out inspectorWd, out inspectorContent, out isDialog);
 
+#if UNITY_EDITOR
             WindowDescriptor consoleWd;
             GameObject consoleContent;
             wm.CreateWindow(RuntimeWindowType.Console.ToString(), out consoleWd, out consoleContent, out isDialog);
+#endif
 
             WindowDescriptor hierarchyWd;
             GameObject hierarchyContent;
             wm.CreateWindow(RuntimeWindowType.Hierarchy.ToString(), out hierarchyWd, out hierarchyContent, out isDialog);
-
-            WindowDescriptor projectWd;
-            GameObject projectContent;
-            wm.CreateWindow(RuntimeWindowType.Project.ToString(), out projectWd, out projectContent, out isDialog);
 
             LayoutInfo layout = new LayoutInfo(false,
                 new LayoutInfo(false,
@@ -141,10 +139,7 @@ namespace Battlehub.RTEditor
                         0.5f),
                         wm.CreateLayoutInfo(sceneContent.transform, sceneWd.Header, sceneWd.Icon),
                     0.25f),
-                new LayoutInfo(true,
-                    wm.CreateLayoutInfo(hierarchyContent.transform, hierarchyWd.Header, hierarchyWd.Icon),
-                    wm.CreateLayoutInfo(projectContent.transform, projectWd.Header, projectWd.Icon),
-                    0.5f),
+                wm.CreateLayoutInfo(hierarchyContent.transform, hierarchyWd.Header, hierarchyWd.Icon),
                 0.75f);
 
             return layout;
