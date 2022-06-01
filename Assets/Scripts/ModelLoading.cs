@@ -21,7 +21,7 @@ public class ModelLoading : MonoBehaviour
 
     private void LoadModel()
     {
-        var model = Resources.Load<GameObject>($"PATH/{lastSatelliteName}");
+        var model = Resources.Load<GameObject>($"{PATH}/{lastSatelliteName}");
         if (model != null)
         {
             GameObject loadedeSatellite = Instantiate(model, Vector3.zero, Quaternion.identity, this.transform);
