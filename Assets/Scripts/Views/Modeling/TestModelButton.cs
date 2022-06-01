@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSatelliteToCalculation : LoadSceneButton
+public class TestModelButton : LoadSceneButton
 {
+    [SerializeField] private ModelSaving modelSave;
+
+
     protected override void OnClick()
     {
-        PrefabRuntime.CreatePrefab();
-
         base.OnClick();
+
+        modelSave.Save();
     }
 }

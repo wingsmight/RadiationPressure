@@ -31,6 +31,10 @@ public static class TransformExt
 
         return children;
     }
+    public static Transform GetLastChild(this Transform transform)
+    {
+        return transform.GetChild(transform.childCount - 1);
+    }
     public static Transform DestroyChildren(this Transform transform)
     {
         foreach (Transform child in transform)

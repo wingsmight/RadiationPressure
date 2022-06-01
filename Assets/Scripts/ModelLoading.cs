@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceModelLoading : MonoBehaviour
+public class ModelLoading : MonoBehaviour
 {
+    private const string PATH = "Satellites";
+
+
     [SerializeField] private SunObjectEarthSystem sunObjectEarthSystem;
 
 
@@ -18,7 +21,7 @@ public class ResourceModelLoading : MonoBehaviour
 
     private void LoadModel()
     {
-        var model = Resources.Load<GameObject>($"Satellites/{lastSatelliteName}");
+        var model = Resources.Load<GameObject>($"PATH/{lastSatelliteName}");
         if (model != null)
         {
             GameObject loadedeSatellite = Instantiate(model, Vector3.zero, Quaternion.identity, this.transform);

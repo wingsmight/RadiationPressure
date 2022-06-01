@@ -28,7 +28,7 @@ public class SatelliteSlotView : UIButton
     {
         if (labelTextView.text.Any(char.IsDigit))
         {
-            ResourceModelLoading.lastSatelliteName = labelTextView.text;
+            ModelLoading.lastSatelliteName = labelTextView.text;
             SceneManager.LoadScene(CALCULATION_SCENE_NAME);
         }
         else

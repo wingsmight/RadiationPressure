@@ -10,8 +10,6 @@ public class LoadSceneButton : UIButton
 
     protected override void OnClick()
     {
-        PrefabRuntime.CreatePrefab();
-
         SceneManager.LoadScene(sceneName);
     }
 }
