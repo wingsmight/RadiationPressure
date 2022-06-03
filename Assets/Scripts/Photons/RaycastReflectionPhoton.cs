@@ -31,7 +31,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
             gameObject.AddComponent<LineRenderer>();
         }
 
-        photonPooler = GameObject.Find("PhotonGenerator").GetComponent<ObjectPooler>();
+        photonPooler = GameObject.Find("SecondaryPhotonPool").GetComponent<ObjectPooler>();
     }
     private void OnEnable()
     {
@@ -69,9 +69,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
         {
             if (Physics.Raycast(ray.origin, ray.direction, out var hit))
             {
-                //var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
                 //var hitDetail = hit.transform.gameObject.GetComponent<Collider>();
-                var hitDetail = hit.transform.gameObject.GetComponentInChildren<Detail>();
+                var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
                 if (hitDetail != null)
                 {
                     caughtPhtotonCount++;

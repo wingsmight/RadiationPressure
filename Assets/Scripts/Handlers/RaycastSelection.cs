@@ -51,6 +51,9 @@ public class RaycastSelection : MonoBehaviour
 
     public void Reset()
     {
+        if (selectedTransform == null)
+            return;
+            
         var selectionRenderer = selectedTransform.GetComponent<Renderer>();
         if (selectionRenderer != null)
         {

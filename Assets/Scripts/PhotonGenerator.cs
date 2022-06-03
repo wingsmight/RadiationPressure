@@ -40,6 +40,8 @@ public class PhotonGenerator : MonoBehaviour
         //     var pooledPhotonObject = photonPooler.Pull();
         // }
 
+        print($"primaryPhotonCount = {primaryPhotonCount}");
+        print($"photonPooler.Capacity = {photonPooler.Capacity}");
         for (; i < primaryPhotonCount; i++)
         {
             var pooledPhotonObject = photonPooler.Pull();

@@ -16,6 +16,7 @@ public class OffsetObjectPooler : ObjectPooler
         base.Awake();
 
         float cubeWidth = Mathf.CeilToInt(Mathf.Pow(capacity, 1.0f / dimension));
+        print($"cubeWidth = {cubeWidth}");
         Vector3 objectSize = new Vector3(pooledObject.transform.localScale.x, pooledObject.transform.localScale.y, pooledObject.transform.localScale.z);
         objectSize += betweenOffset / 2;
         Vector3 minPoint = (cubeWidth / 2) * new Vector3(objectSize.x, objectSize.y, objectSize.z) * -1;
