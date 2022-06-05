@@ -87,7 +87,7 @@ namespace Battlehub.ProBuilderIntegration
             Face face = new Face(Indexes);
             face.submeshIndex = SubmeshIndex;
             face.smoothingGroup = SmoothingGroup;
-            if(UnwrapSettings != null)
+            if (UnwrapSettings != null)
             {
                 face.textureGroup = TextureGroup;
                 face.uv = UnwrapSettings;
@@ -111,11 +111,11 @@ namespace Battlehub.ProBuilderIntegration
     {
         public static event PBMeshEvent<PBMesh> Initialized;
         public static event PBMeshEvent<PBMesh> Destroyed;
-        
+
         public event PBMeshEvent<bool> Selected;
         public event PBMeshEvent Unselected;
         public event PBMeshEvent<bool, bool> Changed;
-        
+
         private ProBuilderMesh m_pbMesh;
         private MeshFilter m_meshFilter;
 
@@ -148,10 +148,10 @@ namespace Battlehub.ProBuilderIntegration
                 Init(this, Vector2.one);
                 List<PBEdge> edges = new List<PBEdge>();
                 IList<Face> faces = m_pbMesh.faces;
-                for(int i = 0; i < faces.Count; ++i)
+                for (int i = 0; i < faces.Count; ++i)
                 {
                     ReadOnlyCollection<Edge> faceEdges = faces[i].edges;
-                    for(int j = 0; j < faceEdges.Count; ++j)
+                    for (int j = 0; j < faceEdges.Count; ++j)
                     {
                         edges.Add(new PBEdge(faceEdges[j], i));
                     }
@@ -205,7 +205,7 @@ namespace Battlehub.ProBuilderIntegration
 
         public static void Init(PBMesh mesh, Vector2 scale)
         {
-            if(mesh.m_pbMesh != null)
+            if (mesh.m_pbMesh != null)
             {
                 return;
             }
@@ -234,7 +234,7 @@ namespace Battlehub.ProBuilderIntegration
                     ImportMesh(mesh.m_meshFilter, mesh.m_pbMesh, scale);
                 }
 
-                if(Initialized != null)
+                if (Initialized != null)
                 {
                     Initialized(mesh);
                 }
@@ -252,11 +252,11 @@ namespace Battlehub.ProBuilderIntegration
 
         private void OnDestroy()
         {
-            if(m_pbMesh != null)
+            if (m_pbMesh != null)
             {
                 Destroy(m_pbMesh);
-                m_pbMesh = null;  
-            }   
+                m_pbMesh = null;
+            }
         }
 
         public void OnMarkAsDestroyed()
@@ -292,7 +292,7 @@ namespace Battlehub.ProBuilderIntegration
             ConnectElements.Connect(m_pbMesh, m_pbMesh.faces);
             m_pbMesh.Refresh();
             m_pbMesh.ToMesh();
-            
+
             RaiseChanged(false, true);
         }
 
@@ -318,7 +318,7 @@ namespace Battlehub.ProBuilderIntegration
         public void Refresh()
         {
             MeshFilter filter = GetComponent<MeshFilter>();
-            if(filter != null)
+            if (filter != null)
             {
                 filter.sharedMesh = new Mesh();// filter.mesh;
 
@@ -341,7 +341,7 @@ namespace Battlehub.ProBuilderIntegration
 
         public void RaiseSelected(bool clear)
         {
-            if(Selected != null)
+            if (Selected != null)
             {
                 Selected(clear);
             }
@@ -349,7 +349,7 @@ namespace Battlehub.ProBuilderIntegration
 
         public void RaiseChanged(bool positionsOnly, bool forceUpdate)
         {
-            if(Changed != null)
+            if (Changed != null)
             {
                 Changed(positionsOnly, forceUpdate);
             }
@@ -357,13 +357,13 @@ namespace Battlehub.ProBuilderIntegration
 
         public void RaiseUnselected()
         {
-            if(Unselected != null)
+            if (Unselected != null)
             {
-                Unselected(); 
+                Unselected();
             }
         }
 
-    
+
         public void BuildEdgeMesh(Mesh target, Color color, bool positionsOnly)
         {
             IList<Vector3> positions = m_pbMesh.positions;
@@ -401,16 +401,16 @@ namespace Battlehub.ProBuilderIntegration
 
                     int positionIndex = edgeIndex * 2;
 
-                    if(vertices.Length > positionIndex)
+                    if (vertices.Length > positionIndex)
                     {
                         vertices[positionIndex + 0] = positions[edge.a];
                     }
-                    
-                    if(vertices.Length > positionIndex + 1)
+
+                    if (vertices.Length > positionIndex + 1)
                     {
                         vertices[positionIndex + 1] = positions[edge.b];
                     }
-                    
+
                     if (!positionsOnly)
                     {
                         tris[positionIndex + 0] = positionIndex + 0;
@@ -424,7 +424,7 @@ namespace Battlehub.ProBuilderIntegration
             if (!positionsOnly)
             {
                 target.Clear();
-                if(vertices.Length > ushort.MaxValue)
+                if (vertices.Length > ushort.MaxValue)
                 {
                     target.indexFormat = IndexFormat.UInt32;
                 }
@@ -448,31 +448,31 @@ namespace Battlehub.ProBuilderIntegration
         public static PBMesh ProBuilderize(GameObject gameObject, bool hierarchy, bool localScaleToUvScale = false)
         {
             Vector3 scale = Vector3.one;
-            if(localScaleToUvScale)
+            if (localScaleToUvScale)
             {
                 scale = gameObject.transform.localScale;
                 float minScale = Mathf.Min(scale.x, scale.y, scale.z);
                 scale = new Vector3(minScale, minScale);
             }
-                
+
             return ProBuilderize(gameObject, hierarchy, scale);
         }
 
         public static PBMesh ProBuilderize(GameObject gameObject, bool hierarchy, Vector2 uvScale)
         {
             bool wasActive = false;
-            if(uvScale != Vector2.one)
+            if (uvScale != Vector2.one)
             {
                 wasActive = gameObject.activeSelf;
                 gameObject.SetActive(false);
             }
-            
-            if(hierarchy)
+
+            if (hierarchy)
             {
                 MeshFilter[] meshFilters = gameObject.GetComponentsInChildren<MeshFilter>(true);
-                for(int i = 0; i < meshFilters.Length; ++i)
+                for (int i = 0; i < meshFilters.Length; ++i)
                 {
-                    if(meshFilters[i].GetComponent<PBMesh>() == null)
+                    if (meshFilters[i].GetComponent<PBMesh>() == null)
                     {
                         PBMesh pbMesh = meshFilters[i].gameObject.AddComponent<PBMesh>();
                         Init(pbMesh, uvScale);
@@ -526,17 +526,20 @@ namespace Battlehub.ProBuilderIntegration
             MeshImporter importer = new MeshImporter(mesh);
             Renderer renderer = mesh.GetComponent<Renderer>();
 
-            importer.Import(filter.sharedMesh, renderer.sharedMaterials, m_defaultImportSettings);
+            var improtedGameObject = new GameObject("MeshObject", typeof(MeshFilter), typeof(MeshRenderer));
+            improtedGameObject.GetComponent<MeshFilter>().mesh = filter.sharedMesh;
+            improtedGameObject.GetComponent<MeshRenderer>().material = renderer.sharedMaterial;
+            importer.Import(improtedGameObject, m_defaultImportSettings);
 
             Dictionary<int, List<Face>> submeshIndexToFace = new Dictionary<int, List<Face>>();
             int submeshCount = filter.sharedMesh.subMeshCount;
-            for(int i = 0; i < submeshCount; ++i)
+            for (int i = 0; i < submeshCount; ++i)
             {
                 submeshIndexToFace.Add(i, new List<Face>());
             }
 
             IList<Face> faces = mesh.faces;
-            if(uvScale != Vector2.one)
+            if (uvScale != Vector2.one)
             {
                 AutoUnwrapSettings uv = AutoUnwrapSettings.defaultAutoUnwrapSettings;
                 uv.scale = uvScale;
@@ -565,7 +568,7 @@ namespace Battlehub.ProBuilderIntegration
             {
                 List<Face> submeshFaces = submeshIndexToFace[i];
                 Material material = materials[i];
-                
+
                 if (material != null)
                 {
                     mesh.SetMaterial(submeshFaces, material);
@@ -628,7 +631,7 @@ namespace Battlehub.ProBuilderIntegration
         {
             Vector2 v1 = p1 - p3;
             Vector2 v2 = p2 - p3;
-            return (v1.x* v2.y - v1.y* v2.x)/2;
+            return (v1.x * v2.y - v1.y * v2.x) / 2;
         }
 
     }
