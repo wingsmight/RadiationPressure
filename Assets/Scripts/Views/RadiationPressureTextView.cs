@@ -16,7 +16,7 @@ public class RadiationPressureTextView : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var pressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea * RaycastReflectionPhoton.caughtPhtotonCount);
+        var pressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea * RaycastReflectionPhoton.caughtPhotonCount);
 
         textView.text = pressure.ToString("E");
     }

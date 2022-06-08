@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SatelliteRotater : MonoBehaviour
 {
     [SerializeField] private Orbit orbit;
     [Space]
+    // Расстояние за кадр
     [SerializeField] private float speed;
 
 

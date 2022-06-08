@@ -32,7 +32,7 @@ public class StepPressure : MonoBehaviour
 
             yield return photonGenerator.ThrowRoutine(isShader);
 
-            var resultPressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea / 1.0E+13f * RaycastReflectionPhoton.caughtPhtotonCount);
+            var resultPressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea / 1.0E+13f * RaycastReflectionPhoton.caughtPhotonCount);
             WriteResults(RESULT_FILE_PATH, angle + ": " + resultPressure.ToString("F13"));
 
             yield return new WaitForEndOfFrame();

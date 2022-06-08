@@ -1,13 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class PhotonGenerator : MonoBehaviour
 {
+    // Пул фотонов
     [SerializeField] private ObjectPooler photonPooler;
     [Space(12)]
+    // Начальная энергия фотонов
     [SerializeField] private float startEnergy;
     [SerializeField] private PooledObject[] pooledPhotonObjects = new PooledObject[0];
 
@@ -18,27 +17,12 @@ public class PhotonGenerator : MonoBehaviour
     public IEnumerator ThrowRoutine(bool isShader)
     {
         radiatoinForce = Vector3.zero;
-        RaycastReflectionPhoton.caughtPhtotonCount = 0;
+        RaycastReflectionPhoton.caughtPhotonCount = 0;
 
         pooledPhotonObjects = new PooledObject[photonPooler.Capacity];
         var primaryPhotonCount = photonPooler.Capacity;
 
         int i = 0;
-        // if ((photonPooler as DensityPool).Density * 10.0f >= 2.9f)
-        // {
-        //     i = 800;
-        //     primaryPhotonCount = 1150;
-        // }
-        // else if ((photonPooler as DensityPool).Density * 10.0f >= 1.9f)
-        // {
-        //     i = 380;
-        //     primaryPhotonCount = 510;
-        // }
-
-        // for (int j = 0; j < i; j++)
-        // {
-        //     var pooledPhotonObject = photonPooler.Pull();
-        // }
 
         print($"primaryPhotonCount = {primaryPhotonCount}");
         print($"photonPooler.Capacity = {photonPooler.Capacity}");

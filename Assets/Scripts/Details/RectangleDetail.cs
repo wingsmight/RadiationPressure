@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RectangleDetail : Detail
@@ -17,6 +15,7 @@ public class RectangleDetail : Detail
     }
 
 
+    // Перерасчет визуального отображения размеров относительно параметров
     private void Scale()
     {
         transform.localScale = new Vector3(width, height, transform.localScale.z);

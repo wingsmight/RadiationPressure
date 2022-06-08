@@ -1,12 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Circle : MonoBehaviour
 {
+    // Объект отрисовки
     [SerializeField] private LineRenderer circleRenderer;
 
 
+    /// <summary>
+    /// Draw circle at the center of transform.
+    /// </summary>
+    /// <param name="radius">the radius of the circle.</param>
+    /// <param name="stepCount">the count of lines drawing the circle. More counts mean more smoothly result.</param>
     public void Draw(float radius, int stepCount)
     {
         circleRenderer.positionCount = stepCount + 1;

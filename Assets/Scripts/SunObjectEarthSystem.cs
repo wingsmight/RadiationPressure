@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SunObjectEarthSystem : MonoBehaviour
@@ -23,6 +21,7 @@ public class SunObjectEarthSystem : MonoBehaviour
     }
 
 
+    // Поворот спутника (его солнечных батарей) в сторону Солнца
     private void RotateSatellite()
     {
         satellite.transform.LookAt(sun.transform);

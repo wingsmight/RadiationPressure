@@ -10,6 +10,6 @@ public class CaughtPhotonCountTextView : MonoBehaviour
 
     private void Update()
     {
-        textView.text = RaycastReflectionPhoton.caughtPhtotonCount.ToString();
+        textView.text = RaycastReflectionPhoton.caughtPhotonCount.ToString();
     }
 }

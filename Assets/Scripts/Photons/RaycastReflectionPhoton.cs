@@ -1,18 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
 {
+    // Максимальное количество переотражений фотона
     [SerializeField] private int maxReflectionsCount;
+    // Максимальная длина полета фотона
     [SerializeField] private float maxLength;
     [Space(12)]
+    // Начальная энергия фотона
     [SerializeField] private float startEnergy;
+    // Минимальная энергия фотона, при котором он уничтожается
     [SerializeField] private float minEnergy;
-    [SerializeField] private bool isMissedPhotonsShowing;
-    [Space]
-    [SerializeField] private Coating testCoating;
+    // Отображать фотон, не попавший на корпус КА
+    [SerializeField] private bool isMissedPhotonShowing;
 
 
     private LineRenderer lineRenderer;
@@ -20,7 +22,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     private PooledObject pulledPhoton;
 
 
-    public static int caughtPhtotonCount = 0;
+    public static int caughtPhotonCount = 0;
 
 
     private void Awake()
@@ -37,6 +39,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     {
         pulledPhoton = null;
     }
+    // Эта функция вызывается, когда поведение становится отключенным.
     private void OnDisable()
     {
         if (pulledPhoton != null)
@@ -46,10 +49,12 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     }
 
 
+    // Запустить фотонов вперед
     public void ThrowForward()
     {
         Throw(transform.position, Vector3.forward, startEnergy);
     }
+    // Запустить фотон по заданному направлению от указанной позиции
     public void Throw(Vector3 startPosition, Vector3 direction, float energy)
     {
         StartCoroutine(ThrowRoutine(startPosition, direction, energy));
@@ -67,21 +72,22 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
 
         for (int i = 0; i < maxReflectionsCount; i++)
         {
+            // Пуск луча
             if (Physics.Raycast(ray.origin, ray.direction, out var hit))
             {
-                //var hitDetail = hit.transform.gameObject.GetComponent<Collider>();
                 var hitDetail = hit.transform.gameObject.GetComponent<Detail>();
+                // Если попали в деталь КА
                 if (hitDetail != null)
                 {
-                    caughtPhtotonCount++;
+                    caughtPhotonCount++;
 
-                    // reduce energy
+                    // Уменьшение энергии
                     energy /= 2.0f;
 
-                    // calculate the force
-                    PhotonGenerator.radiatoinForce += Formulas.RadiationForce(hit.normal, ray.direction, testCoating.Coefficients);
+                    // Вычисление силы
+                    PhotonGenerator.radiatoinForce += Formulas.RadiationForce(hit.normal, ray.direction, hitDetail.Coating.Coefficients);
 
-                    // primary ray
+                    // Первичный луч
                     lineRenderer.positionCount++;
                     lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                     ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
@@ -93,7 +99,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                     }
                     else
                     {
-                        // secondary ray
+                        // Вторичный луч
                         float x = Random.Range(-1.0f, 1.0f);
                         float y = Random.Range(-1.0f, 1.0f);
                         float zLength = Random.Range(0.0f, 1.0f);
@@ -110,7 +116,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                     }
                 }
             }
-            else if (isMissedPhotonsShowing)
+            else if (isMissedPhotonShowing)
             {
                 lineRenderer.positionCount++;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1,

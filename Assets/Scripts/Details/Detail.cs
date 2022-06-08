@@ -1,6 +1,3 @@
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Detail : MonoBehaviour
@@ -9,12 +6,14 @@ public class Detail : MonoBehaviour
     [SerializeField] protected MeshRenderer meshRenderer;
 
 
+    // Эта функция вызывается, когда объект становится включенным и активным.
     private void OnEnable()
     {
         Coating = coating;
     }
 
 
+    // Площадь
     public virtual float Area
     {
         get;

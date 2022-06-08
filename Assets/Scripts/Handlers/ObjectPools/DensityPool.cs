@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DensityPool : ObjectPooler
 {
+    // Измерение (1D, 2D или 3D)
     [SerializeField] private int dimension = 3;
+    // Размер стороны куба, образующий пул
     [SerializeField] private float cubeWidth;
+    // Расстояния между объектами
     [SerializeField] private Vector3 betweenOffset;
 
 
+    // Размер объекта
     private Vector3 objectSize;
+    // Плотность
     private float density = 0.1f;
 
 
@@ -50,6 +53,7 @@ public class DensityPool : ObjectPooler
                 {
                     if (objectIndex < capacity)
                     {
+                        // Установка позиции объекта по все площади/объему квадрата/куба
                         pooledObjects[objectIndex++].GameObject.transform.localPosition = new Vector3(x * objectSize.x, y * objectSize.y, z * objectSize.z) + minPoint;
                     }
                 }
