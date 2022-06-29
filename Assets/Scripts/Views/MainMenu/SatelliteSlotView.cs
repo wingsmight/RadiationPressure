@@ -7,8 +7,8 @@ using System.Linq;
 
 public class SatelliteSlotView : UIButton
 {
-    private const string MODELING_SCENE_NAME = "Modeling";
-    private const string CALCULATION_SCENE_NAME = "Calculation";
+    protected const string MODELING_SCENE_NAME = "Modeling";
+    protected const string CALCULATION_SCENE_NAME = "Calculation";
 
 
     [SerializeField] private TextMeshProUGUI labelTextView;
@@ -26,14 +26,7 @@ public class SatelliteSlotView : UIButton
 
     protected override void OnClick()
     {
-        if (labelTextView.text.Any(char.IsDigit))
-        {
-            ModelLoading.lastSatelliteName = labelTextView.text;
-            SceneManager.LoadScene(CALCULATION_SCENE_NAME);
-        }
-        else
-        {
-            SceneManager.LoadScene(MODELING_SCENE_NAME);
-        }
+        ModelLoading.lastSatelliteName = labelTextView.text;
+        SceneManager.LoadScene(CALCULATION_SCENE_NAME);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ModelLoading : MonoBehaviour
 {
     private const string PATH = "Satellites";
+    private const string DEFAULT_SATELLITE_NAME = "Спутник 14Ф143";
 
 
     [SerializeField] private SunObjectEarthSystem sunObjectEarthSystem;
@@ -24,10 +25,13 @@ public class ModelLoading : MonoBehaviour
         var model = Resources.Load<GameObject>($"{PATH}/{lastSatelliteName}");
         if (model != null)
         {
-            GameObject loadedeSatellite = Instantiate(model, Vector3.zero, Quaternion.identity, this.transform);
-            if (lastSatelliteName.Contains("Спутник"))
+            model = Instantiate(model, this.transform);
+            model.transform.localPosition = Vector3.zero;
+            model.transform.localRotation = Quaternion.identity;
+
+            if (lastSatelliteName.Contains(DEFAULT_SATELLITE_NAME))
             {
-                loadedeSatellite.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                model.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             }
 
             //TODO
