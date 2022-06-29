@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
@@ -19,7 +20,7 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
 
     private LineRenderer lineRenderer;
     private ObjectPooler photonPooler;
-    private PooledObject pulledPhoton;
+    private List<PooledObject> pulledPhotons = new List<PooledObject>();
 
 
     public static int caughtPhotonCount = 0;
@@ -37,15 +38,12 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
     }
     private void OnEnable()
     {
-        pulledPhoton = null;
+        pulledPhotons.Clear();
     }
     // Эта функция вызывается, когда поведение становится отключенным.
     private void OnDisable()
     {
-        if (pulledPhoton != null)
-        {
-            photonPooler.Push(pulledPhoton);
-        }
+        pulledPhotons.ForEach(pulledPhoton => photonPooler.Push(pulledPhoton));
     }
 
 
@@ -107,7 +105,8 @@ public class RaycastReflectionPhoton : MonoBehaviour, IPhoton
                         Vector3 perpendicularVector = new Vector3(x, y, z);
                         Vector3 diffuseDirection = perpendicularVector + (hit.normal * zLength);
 
-                        pulledPhoton = photonPooler.Pull();
+                        var pulledPhoton = photonPooler.Pull();
+                        pulledPhotons.Add(pulledPhoton);
                         var secondaryPhoton = pulledPhoton.GameObject.GetComponent<RaycastReflectionPhoton>();
                         secondaryPhoton.gameObject.SetActive(true);
                         secondaryPhoton.Throw(hit.point, diffuseDirection, energy);

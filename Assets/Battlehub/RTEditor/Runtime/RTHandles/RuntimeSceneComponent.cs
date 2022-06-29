@@ -65,7 +65,7 @@ namespace Battlehub.RTHandles
             get;
             set;
         }
-        
+
         float ZoomSpeed
         {
             get;
@@ -107,14 +107,13 @@ namespace Battlehub.RTHandles
         public Texture2D ViewTexture;
         public Texture2D MoveTexture;
         public Texture2D FreeMoveTexture;
-        
+
         private Plane m_dragPlane;
         private Vector3 m_lastMousePosition;
         private bool m_lockInput;
 
-        private IAnimationInfo m_focusAnimation;
         private Transform m_autoFocusTransform;
-       
+
         [SerializeField]
         private SceneGizmo m_sceneGizmo;
         public SceneGizmo SceneGizmo
@@ -156,14 +155,14 @@ namespace Battlehub.RTHandles
         private Quaternion m_prevCamRotation;
         private Vector3 m_prevCamPosition;
         private bool m_isSceneGizmoOrientationChanging;
-        
+
         public bool IsSceneGizmoEnabled
         {
             get { return m_isSceneGizmoEnabled && m_sceneGizmo != null; }
             set
             {
                 m_isSceneGizmoEnabled = value;
-                if(m_sceneGizmo != null)
+                if (m_sceneGizmo != null)
                 {
                     m_sceneGizmo.gameObject.SetActive(value);
                 }
@@ -190,7 +189,7 @@ namespace Battlehub.RTHandles
         public bool CanZoom
         {
             get { return m_canZoom; }
-            set { m_canZoom = value; }                 
+            set { m_canZoom = value; }
         }
 
         public bool ChangeOrthographicSizeOnly
@@ -280,9 +279,9 @@ namespace Battlehub.RTHandles
             get { return base.IsOrthographic; }
             set
             {
-                if(m_sceneGizmo != null)
+                if (m_sceneGizmo != null)
                 {
-                    if(m_sceneGizmo.IsOrthographic != value)
+                    if (m_sceneGizmo.IsOrthographic != value)
                     {
                         m_sceneGizmo.IsOrthographic = value;
                     }
@@ -300,14 +299,6 @@ namespace Battlehub.RTHandles
 
             Window.IOCContainer.RegisterFallback<IRuntimeSceneComponent>(this);
 
-            if(Run.Instance == null)
-            {
-                GameObject runGO = new GameObject("Run");
-                runGO.transform.SetParent(transform, false);
-                runGO.name = "Run";
-                runGO.AddComponent<Run>();
-            }
-            
             if (ViewTexture == null)
             {
                 ViewTexture = Resources.Load<Texture2D>("RTH_Eye");
@@ -316,7 +307,7 @@ namespace Battlehub.RTHandles
             {
                 MoveTexture = Resources.Load<Texture2D>("RTH_Hand");
             }
-            if(FreeMoveTexture == null)
+            if (FreeMoveTexture == null)
             {
                 FreeMoveTexture = Resources.Load<Texture2D>("RTH_FreeMove");
             }
@@ -389,12 +380,7 @@ namespace Battlehub.RTHandles
                         break;
                     }
 
-                    if (m_focusAnimation != null && m_focusAnimation.InProgress)
-                    {
-                        break;
-                    }
-
-                    if(m_lockInput)
+                    if (m_lockInput)
                     {
                         break;
                     }
@@ -407,7 +393,7 @@ namespace Battlehub.RTHandles
                 while (false);
             }
 
-            if(Grid != null)
+            if (Grid != null)
             {
                 if (IsOrthographic)
                 {
@@ -420,7 +406,7 @@ namespace Battlehub.RTHandles
                     }
                     else
                     {
-                        if(!m_isSceneGizmoOrientationChanging)
+                        if (!m_isSceneGizmoOrientationChanging)
                         {
                             Grid.Alpha += Time.deltaTime * 5;
                         }
@@ -428,7 +414,7 @@ namespace Battlehub.RTHandles
                 }
                 else
                 {
-                    if(IsGridCloseToCamera())
+                    if (IsGridCloseToCamera())
                     {
                         Grid.Alpha -= Time.deltaTime * 25;
                     }
@@ -512,7 +498,7 @@ namespace Battlehub.RTHandles
             m_autoFocusTransform = null;
 
             Transform[] transforms;
-            if(focusMode == FocusMode.Selected || focusMode == FocusMode.Default)
+            if (focusMode == FocusMode.Selected || focusMode == FocusMode.Default)
             {
                 if (Selection.activeTransform == null)
                 {
@@ -575,31 +561,6 @@ namespace Battlehub.RTHandles
         private void Focus(float distance, float objSize)
         {
             const float duration = 0.1f;
-
-            m_focusAnimation = new Vector3AnimationInfo(Window.Camera.transform.position, PivotTransform.position - distance * Window.Camera.transform.forward, duration, Vector3AnimationInfo.EaseOutCubic,
-                (target, value, t, completed) =>
-                {
-                    if (Window.Camera)
-                    {
-                        Window.Camera.transform.position = value;
-                        m_targetPosition = value;
-                    }
-                });
-            Run.Instance.Animation(m_focusAnimation);
-            Run.Instance.Animation(new FloatAnimationInfo(m_orbitDistance, distance, duration, Vector3AnimationInfo.EaseOutCubic,
-                (target, value, t, completed) =>
-                {
-                    m_orbitDistance = value;
-                }));
-
-            Run.Instance.Animation(new FloatAnimationInfo(Window.Camera.orthographicSize, objSize, duration, Vector3AnimationInfo.EaseOutCubic,
-                (target, value, t, completed) =>
-                {
-                    if (Window.Camera)
-                    {
-                        Window.Camera.orthographicSize = value;
-                    }
-                }));
         }
 
         public virtual void Zoom(float deltaZ, Quaternion rotation)
@@ -609,7 +570,7 @@ namespace Battlehub.RTHandles
 
         public virtual void Zoom(float deltaZ, Quaternion rotation, float epsilonSq)
         {
-            if(m_lockInput)
+            if (m_lockInput)
             {
                 return;
             }
@@ -638,13 +599,13 @@ namespace Battlehub.RTHandles
             Vector3 fwd = (rotation * Vector3.forward) * deltaZ;
             if (m_constantZoomSpeed)
             {
-                 fwd *= m_zoomSpeed;
+                fwd *= m_zoomSpeed;
             }
             else
             {
                 fwd *= Mathf.Max(m_zoomSpeed, Mathf.Abs(m_orbitDistance));
             }
-            
+
             Transform cameraTransform = Window.Camera.transform;
             m_orbitDistance = m_orbitDistance - fwd.z;
 
@@ -671,12 +632,12 @@ namespace Battlehub.RTHandles
                 return;
             }
 
-            if(m_rotationInvertY)
+            if (m_rotationInvertY)
             {
                 deltaY = -deltaY;
             }
 
-            if(m_rotationInvertX)
+            if (m_rotationInvertX)
             {
                 deltaX = -deltaX;
             }
@@ -700,7 +661,7 @@ namespace Battlehub.RTHandles
                 return;
             }
             m_lastMousePosition = mousePosition;
-            
+
             RaycastHit hitInfo;
             if (Physics.Raycast(Window.Pointer, out hitInfo))
             {
@@ -711,7 +672,7 @@ namespace Battlehub.RTHandles
                 Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
                 float d;
                 Ray ray = Window.Pointer;
-                if(groundPlane.Raycast(ray, out d))
+                if (groundPlane.Raycast(ray, out d))
                 {
                     m_dragPlane = groundPlane;
                     m_dragPlane = new Plane(-Window.Camera.transform.forward, ray.GetPoint(d));
@@ -756,12 +717,12 @@ namespace Battlehub.RTHandles
 
             Transform camTransform = Window.Camera.transform;
 
-            if(m_rotationInvertY)
+            if (m_rotationInvertY)
             {
                 rotate.y = -rotate.y;
             }
 
-            if(m_rotationInvertX)
+            if (m_rotationInvertX)
             {
                 rotate.x = -rotate.x;
             }
@@ -771,7 +732,7 @@ namespace Battlehub.RTHandles
                 Quaternion.Inverse(m_targetRotation) *
                 Quaternion.Euler(0, -rotate.x, 0));
 
-            if(m_freeRotationSmoothSpeed <= 0)
+            if (m_freeRotationSmoothSpeed <= 0)
             {
                 camTransform.rotation = m_targetRotation;
             }
@@ -818,7 +779,7 @@ namespace Battlehub.RTHandles
             m_targetPosition = m_targetPosition + zoomOffset +
                 camTransform.forward * move.y + camTransform.right * move.x + camTransform.up * move.z;
 
-            if (m_freeMovementSmoothSpeed <= 0 )
+            if (m_freeMovementSmoothSpeed <= 0)
             {
                 camTransform.position = m_targetPosition;
             }
@@ -834,7 +795,7 @@ namespace Battlehub.RTHandles
                     camTransform.position = newPosition;
                 }
             }
-          
+
             Vector3 newPivot = camTransform.position + camTransform.forward * m_orbitDistance;
             SecondaryPivotTransform.position += newPivot - Pivot;
             PivotTransform.position = newPivot;
@@ -870,7 +831,7 @@ namespace Battlehub.RTHandles
             float objSize = distance * Mathf.Sin(fov / 2);
             Window.Camera.orthographicSize = objSize;
 
-            if(!IsOrthographic)
+            if (!IsOrthographic)
             {
                 Grid.transform.rotation = Quaternion.Euler(0, 0, 0);
                 if (IsGridCloseToCamera())
@@ -883,13 +844,13 @@ namespace Battlehub.RTHandles
         private Bounds CalculateBounds(Transform[] transforms)
         {
             CalculateBoundsResult result = new CalculateBoundsResult();
-            for(int i = 0; i < transforms.Length; ++i)
+            for (int i = 0; i < transforms.Length; ++i)
             {
                 Transform t = transforms[i];
                 CalculateBounds(t, result);
             }
 
-            if(result.Initialized)
+            if (result.Initialized)
             {
                 return result.Bounds;
             }
@@ -926,9 +887,9 @@ namespace Battlehub.RTHandles
             {
                 CalculateBounds(renderer, result);
             }
-            
+
             foreach (Transform child in t)
-            {    
+            {
                 CalculateBounds(child, result);
             }
         }
@@ -937,7 +898,7 @@ namespace Battlehub.RTHandles
         {
             if (renderer is ParticleSystemRenderer)
             {
-                return; 
+                return;
             }
 
             Bounds bounds = renderer.bounds;

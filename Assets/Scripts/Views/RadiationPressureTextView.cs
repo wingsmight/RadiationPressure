@@ -6,9 +6,6 @@ using TMPro;
 public class RadiationPressureTextView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textView;
-    [SerializeField] private TMP_InputField cubeWidthInputField;
-    [SerializeField] private TMP_InputField cubeHieghtInputField;
-    [SerializeField] private SatelliteArea satelliteArea;
 
 
     private float overallArea;
@@ -16,7 +13,7 @@ public class RadiationPressureTextView : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var pressure = PhotonGenerator.radiatoinForce / (satelliteArea.OverallArea * RaycastReflectionPhoton.caughtPhotonCount);
+        var pressure = PhotonGenerator.radiatoinForce / RaycastReflectionPhoton.caughtPhotonCount;
 
         textView.text = pressure.ToString("E");
     }

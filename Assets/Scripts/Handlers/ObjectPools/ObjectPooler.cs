@@ -50,8 +50,15 @@ public class ObjectPooler : MonoBehaviour
     }
     public void Push(PooledObject pooledObject)
     {
-        pooledObject.GameObject.SetActive(false);
-        pooledObject.IsFree = true;
+        if (pooledObject != null)
+        {
+            if (pooledObject.GameObject != null)
+            {
+                pooledObject.GameObject.SetActive(false);
+            }
+
+            pooledObject.IsFree = true;
+        }
     }
     public void Push(GameObject pooledObject)
     {

@@ -19,8 +19,6 @@ namespace Battlehub.RTCommon
         private Button m_createEditorButton = null;
         [SerializeField]
         private RTEBase m_editorPrefab = null;
-        [SerializeField]
-        private Splash m_splashPrefab = null;
 
         private RTEBase m_editor;
 
@@ -55,14 +53,8 @@ namespace Battlehub.RTCommon
         private void OnOpen()
         {
             Debug.Log("OnOpen");
-            if (m_splashPrefab != null)
-            {
-                Instantiate(m_splashPrefab).Show(() => InstantiateRuntimeEditor());
-            }
-            else
-            {
-                InstantiateRuntimeEditor();
-            }
+
+            InstantiateRuntimeEditor();
         }
 
         private void InstantiateRuntimeEditor()
