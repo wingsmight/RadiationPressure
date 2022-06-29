@@ -74,7 +74,7 @@
 		<StringResource id="ID_RTEditor_WM_Header_SelectColor" value="Select Color"/>
 		<StringResource id="ID_RTEditor_WM_Header_SelectAnimationProperties" value="Select Properties"/>
 		<StringResource id="ID_RTEditor_WM_Header_ImportFile" value="Import File"/>
-		<StringResource id="ID_RTEditor_WM_Header_Settings" value="Settings"/>
+		<StringResource id="ID_RTEditor_WM_Header_Settings" value="Настройки"/>
     <StringResource id="ID_RTEditor_WM_Header_SaveFile" value="Save File"/>
     <StringResource id="ID_RTEditor_WM_Header_OpenFile" value="Open File"/>
     <StringResource id="ID_RTEditor_WM_Dialog_OK" value="OK"/>
@@ -443,36 +443,45 @@
 		<StringResource id="ID_RTEditor_SelectObjectDialog_None" value="None"/>
 		
 		<!-- SettingsDialog -->
-		<StringResource id="ID_RTEditor_SettingsDialog_Reset" value="Reset"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_Close" value="Close"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_IsGridVisible" value="Is Grid Visible"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_GridZTest" value="Grid Z Test"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_GridOpacity" value="Grid Opacity"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_SnapToGrid" value="Snap To Grid"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_GridSize" value="Grid Size"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_UIAutoScale" value="UI Auto Scale"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_UIScale" value="UI Scale"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_FreeMovementSmoothSpeed" value="Movement Smooth Speed"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_FreeRotationSmoothSpeed" value="Rotation Smooth Speed"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_RotationInvertX" value="Rotation Invert X"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_RotationInvertY" value="Rotation Invert Y"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_ZoomSpeed" value="Zoom Speed"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_ConstantZoomSpeed" value="Constant Zoom Speed"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_UISettings" value="UI Settings"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_SceneSettings" value="Scene Settings"/>
-		<StringResource id="ID_RTEditor_SettingsDialog_SceneNavigationSettings" value="Scene Navigation Settings"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_SystemOfMeasurement" value="System Of Measurement"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_MeasurementSettings" value="Measurement Settings"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_GraphicsSettings" value="Graphics Settings"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_GraphicsQuality" value="Quality"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_DefaultLightSettings" value="Default Light Settings"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_LightColor" value="Color"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_LightIntensity" value="Intensity"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_ShadowType" value="Shadow Type"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_ShadowStrenth" value="Shadow Strength"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_Themes" value="Themes"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_SelectedTheme" value="Selected Theme"/>
-    <StringResource id="ID_RTEditor_SettingsDialog_Default" value="Default"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_Reset" value="Отмена"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_Close" value="Закрыть"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_IsGridVisible" value="Показывать сетку"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_GridZTest" value="Сетка Z"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_GridOpacity" value="Уровень непрозрачности сетки"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_SnapToGrid" value="Примыкание к сетки"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_GridSize" value="Размер сетки"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_UIAutoScale" value="Автомасштабирование интерфейса"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_UIScale" value="Масштаб интерфейса"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_FreeMovementSmoothSpeed" value="Скорость плавного движения"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_FreeRotationSmoothSpeed" value="Скорость плавного поворота"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_RotationInvertX" value="Инверcия поворота по X"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_RotationInvertY" value="Инверcия поворота по Y"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_ZoomSpeed" value="Скорость изменения маштабирования"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_ConstantZoomSpeed" value="Постоянная скорость маштабирования"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_UISettings" value="Настройки интерфейса"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_SceneSettings" value="Настройки сцены"/>
+		<StringResource id="ID_RTEditor_SettingsDialog_SceneNavigationSettings" value="Настройки навигации по сцене"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_MeasurementSettings" value="Настройки системы измерения"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_SystemOfMeasurement" value="Система измерения"/>
+    	<StringResource id="ID_Battlehub.RTEditor.SystemOfMeasurement.Metric" value="Метрическая"/>
+    	<StringResource id="ID_Battlehub.RTEditor.SystemOfMeasurement.Imperial" value="Английская"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_GraphicsSettings" value="Настройки графики"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_GraphicsQuality" value="Качество"/>
+		<StringResource id="ID_Battlehub.RTEditor.GraphicsQuality.Low" value="Низкое"/>
+    	<StringResource id="ID_Battlehub.RTEditor.GraphicsQuality.Medium" value="Среднее"/>
+    	<StringResource id="ID_Battlehub.RTEditor.GraphicsQuality.High" value="Высокое"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_DefaultLightSettings" value="Стандартные настройки освещения"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_LightColor" value="Цвет"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_LightIntensity" value="Интенсивность"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_ShadowType" value="Тип теней"/>
+		<StringResource id="ID_UnityEngine.LightShadows.None" value="Отсутствует"/>
+		<StringResource id="ID_UnityEngine.LightShadows.Hard" value="Жесткие тени"/>
+		<StringResource id="ID_UnityEngine.LightShadows.Soft" value="Мягкие тени"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_ShadowStrenth" value="Жесткость теней"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_Themes" value="Темы"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_SelectedTheme" value="Выбранная тема"/>
+    <StringResource id="ID_RTEditor_SettingsDialog_Default" value="По умолчанию"/>
+ 
     
 
 

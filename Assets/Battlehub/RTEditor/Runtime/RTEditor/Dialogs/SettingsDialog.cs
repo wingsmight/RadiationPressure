@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace Battlehub.RTEditor
 {
-     public class SettingsDialog : RuntimeWindow
+    public class SettingsDialog : RuntimeWindow
     {
         [SerializeField]
         private HeaderLabel m_sceneSettingsHeader = null;
@@ -111,7 +111,7 @@ namespace Battlehub.RTEditor
                 {
                     m_uiScaleEditor.gameObject.SetActive(!UIAutoScale);
                 }
-                if(value)
+                if (value)
                 {
                     m_settings.UIScale = 1.0f;
                 }
@@ -129,18 +129,18 @@ namespace Battlehub.RTEditor
             m_settings = IOC.Resolve<ISettingsComponent>();
             m_localization = IOC.Resolve<ILocalization>();
         }
-        
+
         protected virtual void Start()
         {
             m_parentDialog = GetComponentInParent<Dialog>();
-            if(m_parentDialog != null)
+            if (m_parentDialog != null)
             {
                 m_parentDialog.IsOkVisible = false;
                 m_parentDialog.IsCancelVisible = true;
                 m_parentDialog.CancelText = m_localization.GetString("ID_RTEditor_SettingsDialog_Close", "Close");
             }
 
-            if(m_uiSettingsHeader != null)
+            if (m_uiSettingsHeader != null)
             {
                 m_uiSettingsHeader.Init(null, null, null, null, m_localization.GetString("ID_RTEditor_SettingsDialog_UISettings", "UI Settings"));
             }
@@ -155,7 +155,7 @@ namespace Battlehub.RTEditor
                 m_sceneNavigationSettingsHeader.Init(null, null, null, null, m_localization.GetString("ID_RTEditor_SettingsDialog_SceneNavigationSettings", "Scene Navigation Settings"));
             }
 
-            if(m_measurementHeader != null)
+            if (m_measurementHeader != null)
             {
                 m_measurementHeader.Init(null, null, null, null, m_localization.GetString("ID_RTEditor_SettingsDialog_MeasurementSettings", "Measurement Settings"));
             }
@@ -175,34 +175,34 @@ namespace Battlehub.RTEditor
                 m_gridZTest.Init(m_settings, m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.GridZTest), null, m_localization.GetString("ID_RTEditor_SettingsDialog_GridZTest", "Grid Z Test"));
             }
 
-            if(m_snapToGridEditor != null)
+            if (m_snapToGridEditor != null)
             {
                 m_snapToGridEditor.Init(m_settings, m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.IsGridEnabled), null, m_localization.GetString("ID_RTEditor_SettingsDialog_SnapToGrid", "Snap To Grid"));
             }
 
-            if(m_gridSizeEditor != null)
+            if (m_gridSizeEditor != null)
             {
                 m_gridSizeEditor.Min = 0.1f;
                 m_gridSizeEditor.Max = 8;
                 m_gridSizeEditor.Init(m_settings, m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.GridSize), null, m_localization.GetString("ID_RTEditor_SettingsDialog_GridSize", "Grid Size"));
             }
 
-            if(m_uiAutoScaleEditor != null)
+            if (m_uiAutoScaleEditor != null)
             {
                 m_uiAutoScaleEditor.Init(this, this, Strong.PropertyInfo((SettingsDialog x) => x.UIAutoScale), null, m_localization.GetString("ID_RTEditor_SettingsDialog_UIAutoScale", "UI Auto Scale"));
             }
 
-            if(m_uiScaleEditor != null)
+            if (m_uiScaleEditor != null)
             {
                 m_uiScaleEditor.Min = 0.5f;
                 m_uiScaleEditor.Max = 3;
                 m_uiScaleEditor.Init(m_settings, m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.UIScale), null, m_localization.GetString("ID_RTEditor_SettingsDialog_UIScale", "UI Scale"),
                     () => { },
                     () => { },
-                    () => 
+                    () =>
                     {
                         m_settings.EndEditUIScale();
-                        if(m_parentDialog != null)
+                        if (m_parentDialog != null)
                         {
                             StartCoroutine(CoEndEditUIScale());
                         }
@@ -244,12 +244,12 @@ namespace Battlehub.RTEditor
                 m_zoomSpeedEditor.Init(m_settings, m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.ZoomSpeed), null, m_localization.GetString("ID_RTEditor_SettingsDialog_ZoomSpeed", "Zoom Speed"));
             }
 
-            if(m_constantZoomSpeedEditor != null)
+            if (m_constantZoomSpeedEditor != null)
             {
                 m_constantZoomSpeedEditor.Init(m_settings, m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.ConstantZoomSpeed), null, m_localization.GetString("ID_RTEditor_SettingsDialog_ConstantZoomSpeed", "Constant Zoom Speed"));
             }
 
-            if(m_measurementSystemEditor != null)
+            if (m_measurementSystemEditor != null)
             {
                 m_measurementSystemEditor.Init(m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.SystemOfMeasurement), m_localization.GetString("ID_RTEditor_SettingsDialog_SystemOfMeasurement", "System Of Measurement"));
             }
@@ -266,12 +266,12 @@ namespace Battlehub.RTEditor
                 m_graphicsQualityEditor.Init(m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.GraphicsQuality), m_localization.GetString("ID_RTEditor_SettingsDialog_GraphicsQuality", "Quality"));
             }
 
-            if(m_lightSettingsHeader != null)
+            if (m_lightSettingsHeader != null)
             {
                 m_lightSettingsHeader.Init(null, null, null, null, m_localization.GetString("ID_RTEditor_SettingsDialog_DefaultLightSettings", "Default Light Settings"));
             }
 
-            if(m_lightColorEditor != null)
+            if (m_lightColorEditor != null)
             {
                 m_lightColorEditor.Init(m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.LightColor), m_localization.GetString("ID_RTEditor_SettingsDialog_LightColor", "Light Color"));
             }
@@ -286,7 +286,7 @@ namespace Battlehub.RTEditor
                 m_shadowTypeEditor.Init(m_settings, Strong.PropertyInfo((ISettingsComponent x) => x.ShadowType), m_localization.GetString("ID_RTEditor_SettingsDialog_ShadowType", "Shadow Type"));
             }
 
-            if(m_shadowStrengthEditor != null)
+            if (m_shadowStrengthEditor != null)
             {
                 m_shadowStrengthEditor.Min = 0;
                 m_shadowStrengthEditor.Max = 1;
@@ -305,10 +305,10 @@ namespace Battlehub.RTEditor
             }
 
             m_customSettings.Clear();
-            for(int i = 0; i < m_settings.CustomSettings.Count; ++i)
+            for (int i = 0; i < m_settings.CustomSettings.Count; ++i)
             {
                 GameObject prefab = m_settings.CustomSettings[i];
-                if(prefab != null)
+                if (prefab != null)
                 {
                     GameObject customSettings = Instantiate(prefab);
                     customSettings.transform.SetParent(m_panel, false);
@@ -323,7 +323,7 @@ namespace Battlehub.RTEditor
         private IEnumerator CoEndEditUIScale()
         {
             yield return new WaitForEndOfFrame();
-            m_parentDialog.ParentRegion.Fit();  
+            m_parentDialog.ParentRegion.Fit();
         }
 
         protected override void OnDestroyOverride()
@@ -337,7 +337,7 @@ namespace Battlehub.RTEditor
         {
             IWindowManager wm = IOC.Resolve<IWindowManager>();
             wm.Confirmation("Reset to defaults confirmation", "Are you sure you want to reset to default settings?",
-                (dialog, yes) => 
+                (dialog, yes) =>
                 {
                     m_settings.ResetToDefaults();
                     if (m_uiScaleEditor != null)
