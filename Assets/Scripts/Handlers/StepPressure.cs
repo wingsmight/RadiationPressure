@@ -52,7 +52,9 @@ public class StepPressure : MonoBehaviour
             }
         }
 
+#if UNITY_EDITOR
         AssetDatabase.ImportAsset(path);
+#endif
     }
     private void WriteResults(string path, string text)
     {
@@ -60,6 +62,8 @@ public class StepPressure : MonoBehaviour
         writer.WriteLine(text);
         writer.Close();
 
+#if UNITY_EDITOR
         AssetDatabase.ImportAsset(path);
+#endif
     }
 }

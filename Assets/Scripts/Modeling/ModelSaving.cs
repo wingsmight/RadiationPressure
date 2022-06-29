@@ -31,6 +31,7 @@ public class ModelSaving : MonoBehaviour
             // Make sure the file name is unique, in case an existing Prefab has the same name.
             //localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
 
+#if UNITY_EDITOR
             // Create the new Prefab and log whether Prefab was saved successfully.
             bool prefabSuccess;
             PrefabUtility.SaveAsPrefabAssetAndConnect(savedObject, localPath, InteractionMode.UserAction, out prefabSuccess);
@@ -38,6 +39,7 @@ public class ModelSaving : MonoBehaviour
                 Debug.Log("Prefab was saved successfully");
             else
                 Debug.Log("Prefab failed to save" + prefabSuccess);
+#endif
         }
     }
     protected bool IsModelExisted(GameObject model)

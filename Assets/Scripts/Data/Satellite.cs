@@ -12,7 +12,9 @@ public class Satellite : ScriptableObject
 
     public void Save()
     {
+#if UNITY_EDITOR
         PrefabUtility.SaveAsPrefabAsset(model, name);
+#endif
     }
 
 

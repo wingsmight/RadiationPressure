@@ -148,4 +148,4 @@ MonoBehaviour:
   maxLength: 1000
   startEnergy: 100
   minEnergy: 2
-  isMissedPhotonShowing: 0
+  isMissedPhotonShowing: 1

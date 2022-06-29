@@ -133,10 +133,14 @@ namespace Battlehub.RTEditor
 
             LayoutInfo layout = new LayoutInfo(false,
                 new LayoutInfo(false,
+#if UNITY_EDITOR
                     new LayoutInfo(true,
                         wm.CreateLayoutInfo(inspectorContent.transform, inspectorWd.Header, inspectorWd.Icon),
                         wm.CreateLayoutInfo(consoleContent.transform, consoleWd.Header, consoleWd.Icon),
                         0.5f),
+#else
+                        wm.CreateLayoutInfo(inspectorContent.transform, inspectorWd.Header, inspectorWd.Icon),
+#endif
                         wm.CreateLayoutInfo(sceneContent.transform, sceneWd.Header, sceneWd.Icon),
                     0.25f),
                 wm.CreateLayoutInfo(hierarchyContent.transform, hierarchyWd.Header, hierarchyWd.Icon),
